@@ -1,0 +1,174 @@
+
+ 
+/*  
+  .drop {
+    position: absolute;
+    bottom: 50%;
+    width: 15px;
+    height: 120px;
+    box-shadow: 5px 5px 15px white;
+    z-index: -2;
+    pointer-events: none;
+    animation: drop 6.5s linear infinite;
+  }
+  
+  @keyframes drop {
+    0% {
+      transform: translateY(0vh);
+    }
+
+    25% {
+      background-color: red;
+      transform: translateX(500px);  
+    }
+
+    75% {
+      background-color: red;
+      transform: translateY(50px);
+      
+    }
+    100% {
+      transform: translateY(90vh);
+    }
+  }*/
+  
+  
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+
+* {
+    font-family: 'Electrolize', sans-serif;
+}
+
+body {
+    background: black;
+      
+      
+}
+
+h1 {
+    text-align: center;
+    font-size: 50pt;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    margin-left: 27%;
+    margin-top: 20px;
+}
+
+.tabela {
+    display: grid;
+    width: 75%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 18px;
+    margin: auto;
+    cursor:default;
+}
+
+.nulo{
+  cursor:auto;
+}
+
+.na {
+    border: none;
+}
+
+div.modal {
+    border: solid 4px rgba(255, 255, 255, .150);
+    grid-column-start: 3;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+/*       .metal, .alcalinos, .alcalino-terroso, .outros-metais,.nao-metais, .lantanideos, .gases-nobres, .actinidios */
+.elemento {
+    border: solid 4px;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    width: 50px;
+    height: 50px;
+    font-size: 27pt;
+    text-align: center;
+    transition: .29s all;
+    cursor: pointer;
+}
+
+.elemento:hover {
+    transform: scale(1.2);
+    border: 4px solid ;
+    border-radius:4%;
+    
+  }
+
+  
+  
+div.elemento div.numero {
+    font-size: 15pt;
+}
+
+#metal {
+    border-color: rgb(233, 79, 143);
+    color: rgb(233, 79, 143);
+    background-color: rgba(233, 79, 143, 0.150);
+}
+
+#alcalinos {
+    border-color: rgb(255, 255, 0);
+    color: rgb(255, 255, 0);
+    background-color: rgba(255, 255, 0, 0.150);
+}
+
+#alcalinoss {
+  border-color: rgb(161, 211, 68);
+  color: rgb(161, 211, 68);
+  background-color: rgba(161, 211, 68, 0.150);
+}
+
+#alcalino-terroso {
+    border-color: rgb(255, 125, 0);
+    color: rgb(255, 125, 0);
+    background-color: rgb(255, 125, 0, 0.150);
+}
+
+#outros-metais {
+    border-color: rgb(0, 255, 255);
+    color: rgb(0, 255, 255);
+    background-color: rgb(0, 255, 255, 0.150);
+}
+
+#nao-metais {
+    border-color: rgb(115, 255, 0);
+    color: rgb(115, 255, 0);
+    background-color: rgb(115, 255, 0, 0.150);
+}
+
+#gases-nobres {
+    /*border-color: rgb(3, 143, 236);*/
+    border-color: rgb(3, 143, 236);
+    color: rgb(3, 143, 236);
+    background-color: rgb(3, 143, 236, 0.150);
+}
+
+#lantanideos {
+    border-color: rgb(211, 25, 12);
+    color: rgb(211, 25, 12);
+    background-color: rgb(211, 25, 12, 0.150);
+}
+
+#actinidios {
+    border-color: rgb(255, 255, 255);
+    color: rgb(249, 249, 249);
+    background-color: rgb(225, 255, 255, 0.150);
+}
+
+#none {
+    border-color: rgb(255, 255, 255);
+    color: rgb(249, 249, 249);
+    background-color: rgb(225, 255, 255, 0.150);
+}
+
+#metal:hover , #alcalinos:hover , #alcalino-terroso:hover , #outros-metais:hover , #nao-metais:hover , #lantanideos:hover , #gases-nobres:hover , #actinidios:hover , #alcalinoss:hover {
+  background-color: rgb(14, 14, 14);
+
+}
