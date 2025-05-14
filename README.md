@@ -13,6 +13,8 @@ JSON: Formato para armazenar os dados dos elementos.
 Como Usar
 Clone o repositório:
 
+Bash
+
 git clone https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content
 Abra o arquivo index.html no seu navegador:
 O arquivo index.html é o ponto de entrada da aplicação. Ao abri-lo, a tabela periódica será carregada.
@@ -30,5 +32,3 @@ Organização por Grupos/Blocos: Implementar visualizações ou filtros para des
 Responsividade Aprimorada: Garantir que a tabela periódica se adapte bem a diferentes tamanhos de tela e dispositivos.
 Busca e Filtro: Adicionar funcionalidades de busca por nome ou símbolo e filtros por propriedades dos elementos.
 Estilização Avançada: Melhorar a estética da tabela periódica com CSS mais elaborado.
-Contribuição
-Contribuições são bem-vindas! Se você tiver ideias para melhorias, correções de bugs ou novas funcionalidades, sinta-se 1  à vontade para abrir uma issue 2  ou enviar um pull request.
