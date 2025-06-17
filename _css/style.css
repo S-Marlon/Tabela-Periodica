@@ -20,10 +20,10 @@ h1 {
 
 .tabela {
     display: grid;
-    width: 75%;
+    width: 70%;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 5px;
-    margin: auto;
+    margin: 0 0;
     cursor:default;
     
 }
@@ -150,33 +150,24 @@ div.elemento div.numero {
     display: flex; /* Usar flex para organizar as colunas internas */
     width: 100%; /* Preenche a largura do container .modal */
     padding: 20px;
+    min-width: 200px;
 }
 
 .coluna-nome {
     flex: 0 0 auto;
     text-align: center;
     margin-right: 0px;
-    min-width: 250px; 
+    min-width: 200px; 
 }
 
 .valor-nome {
-    font-size: 2em;
+    font-size: 3em;
     font-weight: bold;
 }
 
 .colunas-simbolo-dados {
     display: flex;
     flex: 1; /* Ocupa o espaço restante */
-}
-
-.coluna-simbolo {
-    flex: 0 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-right: 20px;
-    border-right: 1px solid #555;
 }
 
 .valor-simbolo {
@@ -192,7 +183,7 @@ div.elemento div.numero {
 
 .coluna-dados {
     flex: 1; /* Ocupa todo o espaço restante */
-    padding-left: 20px;
+    padding-left: 0px;
 }
 
 .lista-dados {
@@ -203,7 +194,7 @@ div.elemento div.numero {
 .lista-dados li {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 .label {
