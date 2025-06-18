@@ -13,11 +13,11 @@ body {
 .container{
    display: grid;
   grid-template-areas:
-    "header header header header"
-    "stats range filter search"
-    "emenu contents contents dmenu"
-    "footer footer footer footer";
-  grid-template-columns: 1fr 4fr 4fr 1fr;
+    "header header header header header"
+    "stats range filter filter sa"
+    "emenu contents contents info dmenu"
+    "footer footer footer footer footer";
+  grid-template-columns: 1fr 5fr 5fr 3fr 1fr;
   gap: 5px;
   background-color: #2196F3;
   padding: 5px;
@@ -35,6 +35,37 @@ h1 {
     color: rgb(255, 255, 255);
 }
 
+div.info{
+    grid-area: info ;
+    display: grid;
+    grid-template-areas:
+    "top top "
+    "icon desc"
+    "text text "
+    "down down";
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  background-color: #2ff321;
+}
+
+div.top{
+     grid-area:top;
+}
+div.icon{
+     grid-area: icon;
+}
+div.desc{
+     grid-area:desc;
+}
+div.text{
+     grid-area: text;
+}
+div.down{
+     grid-area: down;
+}
+
+
+
 div.search{
      grid-area: search;
 }
@@ -46,8 +77,9 @@ div.filter{
      grid-area: filter;
 }
 
-input.range{
+div.range{
     grid-area: range;
+    text-align: center;
     
 }
 

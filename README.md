@@ -41,3 +41,47 @@ tabela-periodica/
 - <b>Responsividade Aprimorada:</b> Garantir que a tabela periódica se adapte bem a diferentes tamanhos de tela e dispositivos.
 - <b>Busca e Filtro:</b> Adicionar funcionalidades de busca por nome ou símbolo e filtros por propriedades dos elementos.
 - <b>Estilização Avançada:</b> Melhorar a estética da tabela periódica com CSS mais elaborado.
+
+
+✨ Funcionalidades Principais
+
+    Visualização Completa da Tabela Periódica: Exibe todos os 118 elementos da tabela, organizados por grupo e período.
+    Pesquisa Dinâmica:
+        Pesquise por nome, símbolo ou número atômico para elementos.
+        Pesquise por fórmula química ou nome comum/IUPAC para compostos.
+    Detalhes Abrangentes de Elementos: Ao clicar ou pesquisar um elemento, exibe informações como:
+        Nome, Símbolo, Número Atômico, Massa Atômica.
+        Grupo, Período, Bloco.
+        Configuração Eletrônica.
+        Estados de Oxidação Comuns.
+        Breve descrição, usos e aplicações.
+    Informações Detalhadas de Compostos/Ligações Comuns: Para as combinações mais pesquisadas, oferece:
+        Fórmula Química e Nomenclatura (comum e/ou IUPAC).
+        Tipo de Ligação (Iônica, Covalente - com indicação de polaridade).
+        Descrição, usos e importância no dia a dia.
+        Propriedades físicas básicas (ex: estado à temperatura ambiente, solubilidade).
+
+🚀 Funcionalidades Avançadas (Para Estudantes Avançados)
+
+Para tornar a ferramenta ainda mais útil para alunos do ensino médio e superior, foram incluídas (ou serão incluídas) as seguintes capacidades:
+
+    Filtros Inteligentes:
+        Por Tipo de Ligação: Filtre compostos iônicos, covalentes (polares/apolares).
+        Por Função Química: Filtre por ácidos, bases, sais, óxidos, hidrocarbonetos, etc.
+        Por Aplicação: Explore compostos usados em medicina, construção, alimentos, etc.
+    Detalhes Estruturais de Compostos:
+        Geometria Molecular: Indicação da forma 3D da molécula (ex: angular, tetraédrica).
+        Hibridização: Informa a hibridização de átomos centrais em moléculas (sp3,sp2,sp).
+        Eletronegatividade e Polaridade: Valores de eletronegatividade dos elementos e indicação da polaridade da ligação/molécula.
+        Visualização 3D de Moléculas (Planejado): Integração com bibliotecas para renderizar modelos 3D de compostos, auxiliando na compreensão espacial.
+        Imagem de Abre em uma nova janela
+    Informações Complementares:
+        Alotropia: Explicação de diferentes formas para o mesmo elemento (ex: grafite e diamante para o Carbono).
+        Imagem de Graphite and diamond, allotropes of carbon, crystal structuresAbre em uma nova janela
+        Graphite and diamond, allotropes of carbon, crystal structures
+        Isótopos Comuns: Menção de isótopos relevantes e suas aplicações.
+        Reatividade e Reações Típicas: Breves descrições de reações importantes.
+    Ferramentas Interativas (Em desenvolvimento/Planejado):
+        Calculadora de Massa Molar: Para qualquer fórmula química inserida.
+        Tabela de Solubilidade: Interativa para consulta rápida.
+        Sugestão de Compostos Relacionados: Ajuda a explorar temas conectados
