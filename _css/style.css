@@ -11,7 +11,7 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 50pt;
+    font-size: 30pt;
     color: rgb(255, 255, 255);
     position: absolute;
     margin-left: 27%;
@@ -20,42 +20,19 @@ h1 {
 
 .tabela {
     display: grid;
-    width: 70%;
+    
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 5px;
+    grid-gap: 2px;
     margin: 0 0;
     cursor:default;
+    margin: 0 auto;
+}
+
+.tabela div.elemento {
+    /* border: solid 2px; */
+    padding: 0px; 
     
-}
-
-.simbolo{
-  font-size: 20pt;
-  
-}
-
-.nulo{
-  cursor:auto;
-}
-
-.na {
-    border: none;
-}
-
-div.modal {
-    border: solid 4px rgba(255, 255, 255, .150);
-    grid-column-start: 3;
-    grid-column-end: 13;
-    grid-row-start: 1;
-    grid-row-end: 4;
-    border-radius: 12px;
-}
-
-/*       .metal, .alcalinos, .alcalino-terroso, .outros-metais,.nao-metais, .lantanideos, .gases-nobres, .actinidios */
-.elemento {
-    border: solid 2px;
-    padding: 15px;
-    width: 40px;
-    height: 40px;
+   
     text-align: center;
     transition: .29s all;
     cursor: pointer;
@@ -63,14 +40,25 @@ div.modal {
 
 .elemento:hover {
     transform: scale(1.2);
-    border: 1px solid ;
-    border-radius:4%;
+    /* border: 1px solid ; */
+    /* border-radius:4%; */
     
 }
 
 div.elemento div.numero {
-    font-size: 15pt;
+   font-size: 7pt;
 }
+div.elemento span.simbolo {
+    font-size: 10pt;
+}
+
+.nulo{
+  cursor:auto;
+}
+
+
+/*       .metal, .alcalinos, .alcalino-terroso, .outros-metais,.nao-metais, .lantanideos, .gases-nobres, .actinidios */
+
 
 .metal-alcalino {
     background-color: #f06292; /* Rosa */
@@ -127,6 +115,16 @@ div.elemento div.numero {
     background-color: rgb(225, 255, 255, 0.150);
 }
 
+div.modal {
+    /* border: solid px rgba(255, 255, 255, .150); */
+    grid-column-start: 3;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    
+    /* border-radius: 12px; */
+}
+
 .modal {
     /* Adicione quaisquer estilos que você já tenha para o seu container modal */
     display: flex; /* Se você quer que o conteúdo dentro se organize de alguma forma */
@@ -134,46 +132,42 @@ div.elemento div.numero {
     align-items: center; /* Exemplo: Centralizar os filhos horizontalmente */
     /* Outros estilos do seu modal */
     background-color: #222; /* Cor de fundo de exemplo para o modal */
-    padding-left: 20px;
+    /* padding-left: 20px;
     padding-right: 20px;
     border-radius: 8px;
-    width: 90%; /* Largura do seu container modal (ajuste conforme necessário) */
-    max-width: 90%;
-    margin: 0px auto; /* Para centralizar o modal na tela, se for o caso */
+    width: 90%;  */
+    /* Largura do seu container modal (ajuste conforme necessário) */
+    /* max-width: 90%; */
+    
+    margin: 0px 20px;
+     /* Para centralizar o modal na tela, se for o caso */
+     
+     
 }
 
-#detalhes-elemento {
-    background-color: #333;
-    color: aliceblue;
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex; /* Usar flex para organizar as colunas internas */
-    width: 100%; /* Preenche a largura do container .modal */
-    padding: 20px;
-    min-width: 200px;
-}
 
-.coluna-nome {
-    flex: 0 0 auto;
-    text-align: center;
-    margin-right: 0px;
-    min-width: 200px; 
-}
+
+
 
 .valor-nome {
     font-size: 3em;
     font-weight: bold;
 }
 
-.colunas-simbolo-dados {
-    display: flex;
-    flex: 1; /* Ocupa o espaço restante */
-}
+
 
 .valor-simbolo {
     font-size: 3em;
     font-weight: bold;
     line-height: 1;
+}
+@media(max-width:500px){
+    .valor-simbolo {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1;
+    } 
+   
 }
 
 .valor-numero-atomico {
@@ -181,27 +175,64 @@ div.elemento div.numero {
     margin-top: 5px;
 }
 
+
+#detalhes-elemento {
+    background-color: #333;
+    color: aliceblue;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex; /* Usar flex para organizar as colunas internas */
+    flex: 1;
+    
+}
+
+
+.label {
+    font-weight: bold;
+    font-size: 5pt;
+    margin-right: 5px;
+}
+
+.valor-dado {
+    text-align: right;
+      font-size: 5pt;
+}
+.modal .painel-nome{
+    font-size: 5pt;
+    font-size: 1.8em;
+    text-align: left ;
+    background-color: rgb(255, 0, 0);
+    
+    
+}
+
+.modal div.painel{
+    background-color: rgb(19, 143, 226);
+}
+
+.coluna-nome {
+    background-color: rgb(19, 143, 226);
+    font-size: 5pt;
+}
+
+.colunas-simbolo-dados {
+    background-color: rgb(64, 201, 19);
+   
+
+}
+
 .coluna-dados {
-    flex: 1; /* Ocupa todo o espaço restante */
+   
     padding-left: 0px;
 }
 
 .lista-dados {
     list-style: none;
-    padding: 0;
+   
 }
 
 .lista-dados li {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 4px;
-}
-
-.label {
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-.valor-dado {
-    text-align: right;
+    
 }
