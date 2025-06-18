@@ -7,18 +7,65 @@
 
 body {
     background: black;
+    
+}
+
+.container{
+   display: grid;
+  grid-template-areas:
+    "header header header header"
+    "stats range filter search"
+    "emenu contents contents dmenu"
+    "footer footer footer footer";
+  grid-template-columns: 1fr 4fr 4fr 1fr;
+  gap: 5px;
+  background-color: #2196F3;
+  padding: 5px;
+}
+
+footer{
+    background-color: #9e9e9e;
+    grid-area: footer;
 }
 
 h1 {
+    grid-area: header;
     text-align: center;
-    font-size: 30pt;
+    font-size: 50pt;
     color: rgb(255, 255, 255);
-    position: absolute;
-    margin-left: 27%;
-    margin-top: 20px;
+}
+
+div.search{
+     grid-area: search;
+}
+div.stats{
+     grid-area: stats;
+}
+
+div.filter{
+     grid-area: filter;
+}
+
+input.range{
+    grid-area: range;
+    
+}
+
+.tabelona{
+     grid-area: contents;
+}
+
+div.left{
+     grid-area: emenu;
+    background-color: #ffffff;
+}
+div.right{
+     grid-area: dmenu;
+    background-color: #ffffff;
 }
 
 .tabela {
+   
     display: grid;
     
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
