@@ -14,10 +14,10 @@ body {
    display: grid;
   grid-template-areas:
     "header header header header header"
-    "stats range filter filter sa"
+    "stats range field filter sa"
     "emenu contents contents info dmenu"
     "footer footer footer footer footer";
-  grid-template-columns: 1fr 5fr 5fr 3fr 1fr;
+  grid-template-columns: 1fr 5fr 5fr 4fr 1fr;
   gap: 5px;
   background-color: #2196F3;
   padding: 5px;
@@ -39,9 +39,9 @@ div.info{
     grid-area: info ;
     display: grid;
     grid-template-areas:
-    "top top "
+    "icon top "
     "icon desc"
-    "text text "
+   
     "down down";
     grid-template-columns: 1fr 1fr;
     gap: 5px;
@@ -64,8 +64,6 @@ div.down{
      grid-area: down;
 }
 
-
-
 div.search{
      grid-area: search;
 }
@@ -75,6 +73,7 @@ div.stats{
 
 div.filter{
      grid-area: filter;
+     align: right;
 }
 
 div.range{

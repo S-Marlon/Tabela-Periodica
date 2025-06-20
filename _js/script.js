@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="numero">${elemento.numero_atomico}</div>
                     `;
                     elementoDiv.addEventListener('click', function() {
-                    const numeroAtomico = elemento.numero_atomico;
-                        mostrarelemento(numeroAtomico);
+                    const elementoBuscado = elemento.numero_atomico;
+                        mostrarelemento(elementoBuscado);
                 });
                      elementoDiv.classList.add(elemento.grupo_funcional.toLowerCase().replace(/ /g, '-'));
                      
@@ -32,14 +32,37 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-function mostrarelemento(numeroAtomicoClicado) {
-    console.log(numeroAtomicoClicado);
+// nome, símbolo ou número atômico
+
+function mostrarelemento(elementoMostrar) {
+    
+    console.log(elementoMostrar);
 
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
+
+            let elemento = null
+            
+            // realiza a busca pelo numero atomico
+            if(elementoMostrar !== undefined && elementoMostrar !== null){
+                const numeroAtomicoBusca = parseInt(elementoMostrar);
+            if (!isNaN(numeroAtomicoBusca)) { // Check if parsing to integer was successful
+                elemento = data.find(item => item.numero_atomico === numeroAtomicoBusca);
+            }}
+
+            // realiza a busca pelo nome
+            if (!elemento && elementoMostrar !== undefined && elementoMostrar !== null) {
+            const nomeBusca = String(elementoMostrar).toLowerCase(); 
+            elemento = data.find(item => item.nome.toLowerCase() === nomeBusca);
+            }
+
+            // realiza a busca pelo simbolo
+            if (!elemento && elementoMostrar !== undefined && elementoMostrar !== null) {
+            const simboloBusca = String(elementoMostrar).toLowerCase(); 
+            elemento = data.find(item => item.simbolo.toLowerCase() === simboloBusca);
+            }
             // Encontra o elemento no array 'data' cujo 'numero_atomico' corresponde ao clicado
-            const elemento = data.find(elemento => elemento.numero_atomico === parseInt(numeroAtomicoClicado));
 
             if (elemento) {
                 const nomeElemento = document.getElementById("elemento-nome");
@@ -64,8 +87,18 @@ function mostrarelemento(numeroAtomicoClicado) {
                 configuracaoEletronicaElemento.textContent = elemento.configuracao_eletronica;
                 grupoFuncionalElemento.textContent = elemento.grupo_funcional;
             }
+             
         })
         .catch(error => {
             console.error('Erro ao carregar os dados:', error);
         });
+
+}
+
+function busca(){
+
+ numeroAtomico = document.querySelector("#busca_n_atomico").value
+
+
+    mostrarelemento(numeroAtomico)
 }
