@@ -13,36 +13,51 @@
 
 <div class="container"> 
 
-    
         
-    <h1 style="cursor: default;"> Tabela Periodica </h1>
+    <h1 class="header" style="cursor: default;"> Tabela Periodica </h1>
 
     <div class="stats">demo</div>
-    <div class="range">
-        <button type="button">-50</button>
-        <button type="button">0</button>
-        <button type="button">50</button>
-        <button type="button">100</button>
-        <button type="button">500</button>
-        <button type="button">1000</button>
-        <br>
-        <input type="range" min="-170" max="5000">
-        <button>X</button>
-    </div>
     
+      <div class="field">
 
-     <!-- <div class="search">
-        
-     </div> -->
-
-     <div class="filter">
-
-        filtros por propriedades dos elementos
-<br>
+        <div class="left">
+            filtros por propriedades dos elementos
+            <button type="button">-50</button>
+            <button type="button">0</button>
+            <button type="button">50</button>
+            <button type="button">100</button>
+            <button type="button">500</button>
+            <button type="button">1000</button>
+            <br>
+            <input type="range" min="-170" max="5000">
+            <button>X</button>
+        </div>
+        <div class="center-left">
+            <div class="element">
+            <input type="number" id="atomic-number"  class="atomic-number" value="1" min="1" max="118">
+            <input type="text" id="symbol" class="symbol" placeholder="H" value="H">
+            <input type="text" id="elename" class="elename" value="Hidrogênio">
+            <input type="text" class="atomic-mass" value="1.008">
+        </div>   
+        <div>
+            
+            <input type="text" placeholder="grupo">
+            <input type="text" placeholder="periodo">
+            <input type="text" placeholder="bloco">
+            <input type="text" placeholder="estado fisico">
+            <input type="text" placeholder="configuracao eletronica">  
+            <input type="text" placeholder="grupo funcional">
+            <input type="text" placeholder="propriedades">
+            
+        </div>
+        </div>
+        <div class="center-right">
+            <br>
         <button onclick="busca()">Buscar elemento</button>
         <input type="text" id="busca_n_atomico">
-<br>
-        tipo elemento:
+        </div>
+        <div class="right">
+               tipo elemento:
         <select name="" id="">
             <option value="">Todos</option>
             <option value="">Nao Metal</option>
@@ -62,11 +77,11 @@
         <button>Z - A</button>
         <button>Maior - menor</button>
         <button>menor - maior</button>
-        
-        <!-- <input type="number" id="busca_n_atomico" min="1" max="118"> -->
+        </div>
 
-     </div>
+<br>
 
+     </div> 
      <div class="info">
 
         <div class="top"> sou o nome</div>
@@ -75,7 +90,6 @@
         <div class="down"> olha aqui</div>
         
      </div>
-    
     
     <div class="tabelona">
     <div class="tabela">
@@ -93,14 +107,14 @@
 
             <div id="detalhes-elemento">
 
-                <div class="coluna-nome"> 
+                <div class="painel-left"> 
                     <br><br> 
                     <span id="elemento-simbolo" class="valor-simbolo">-</span>
                     <br>
                     <span id="elemento-numero-atomico" class="valor-numero-atomico">-</span>
                 </div>
 
-                <div class="colunas-simbolo-dados"> 
+                <div class="painel-right"> 
                     <div class="coluna-dados">
                         <ul class="lista-dados">
                             <li>
@@ -306,9 +320,8 @@
     <div class="left">ads</div>
     <div class="right">ads</div>
 
-    <footer>
+    <footer class="footer">
         <p>Marlons</p>
-
     </footer>
 </div>
 <script src="_js/script.js"> </script>

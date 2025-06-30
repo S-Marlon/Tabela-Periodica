@@ -7,83 +7,101 @@
 
 body {
     background: black;
-    
+    margin: 0;
+    padding: 0;
 }
 
-.container{
-   display: grid;
-  grid-template-areas:
-    "header header header header header"
-    "stats range field filter sa"
-    "emenu contents contents info dmenu"
-    "footer footer footer footer footer";
-  grid-template-columns: 1fr 5fr 5fr 4fr 1fr;
-  gap: 5px;
-  background-color: #2196F3;
-  padding: 5px;
-}
-
-footer{
-    background-color: #9e9e9e;
-    grid-area: footer;
-}
-
-h1 {
-    grid-area: header;
-    text-align: center;
-    font-size: 50pt;
-    color: rgb(255, 255, 255);
-}
-
-div.info{
-    grid-area: info ;
+.container {
     display: grid;
     grid-template-areas:
-    "icon top "
-    "icon desc"
-   
-    "down down";
+        "header header header header header"
+        "stats field field field sa"
+        "emenu contents contents info dmenu"
+        "footer footer footer footer footer";
+    grid-template-columns: 1fr 5fr 5fr 3fr 1fr;
+    gap: 5px;
+    background-color: #2196F3;
+    padding: 5px;
+    min-height: 100vh;
+}
+
+/* Áreas do grid */
+.header    { grid-area: header; }
+.stats     { grid-area: stats; }
+.field     { grid-area: field; }
+.sa        { grid-area: sa; }
+.emenu     { grid-area: emenu; }
+.contents  { grid-area: contents; }
+.info      { grid-area: info; }
+.dmenu     { grid-area: dmenu; }
+.footer    { grid-area: footer; }
+
+/* HEADER */
+.header {
+    text-align: center;
+    font-size: 3rem;
+    color: #fff;
+    font-family: 'Lalezar', cursive;
+    padding: 10px 0;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #9e9e9e;
+    color: #222;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* INFO GRID */
+.info {
+    display: grid;
+    grid-template-areas:
+        "icon top"
+        "icon desc"
+        "down down";
     grid-template-columns: 1fr 1fr;
     gap: 5px;
-  background-color: #2ff321;
+    background-color: #2ff321;
+    border-radius: 8px;
+    padding: 10px;
 }
+.icon { grid-area: icon; }
+.top  { grid-area: top; }
+.desc { grid-area: desc; }
+.down { grid-area: down; }
 
-div.top{
-     grid-area:top;
+/* FIELD GRID */
+div.field {
+    grid-area: field;
+    display: grid;
+    grid-template-areas: "leftf center-left center-right rightf";
+    grid-template-columns: 1fr 3fr 1fr 1fr;
+    gap: 5px;
+    background-color: #2ff321;
+    border-radius: 8px;
+    padding: 10px;
 }
-div.icon{
-     grid-area: icon;
-}
-div.desc{
-     grid-area:desc;
-}
-div.text{
-     grid-area: text;
-}
-div.down{
-     grid-area: down;
-}
+div.field .left         { grid-area: leftf; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+div.field .center-left  { grid-area: center-left; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+div.field .center-right { grid-area: center-right; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+div.field .right        { grid-area: rightf; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 
-div.search{
-     grid-area: search;
+/* STATS, SA, EMENU, DMENU, CONTENTS */
+.stats, .sa, .emenu, .dmenu, .contents {
+    padding: 10px;
+    border-radius: 8px;
 }
-div.stats{
-     grid-area: stats;
-}
+.stats { background: #e3f2fd; }
+.sa    { background: #e3f2fd; }
+.emenu { background: #fff; }
+.dmenu { background: #fff; }
+.contents { background: #f5f5f5; }
 
-div.filter{
-     grid-area: filter;
-     align: right;
-}
-
-div.range{
+/* RANGE */
+.range {
     grid-area: range;
     text-align: center;
-    
-}
-
-.tabelona{
-     grid-area: contents;
 }
 
 div.left{
@@ -95,102 +113,69 @@ div.right{
     background-color: #ffffff;
 }
 
+/* TABELA PERIODICA */
+.tabelona, .contents {
+    grid-area: contents;
+    overflow-x: auto;
+}
+
 .tabela {
-   
-    display: grid;
-    
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 2px;
-    margin: 0 0;
-    cursor:default;
+   display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    gap: 2px;
     margin: 0 auto;
+    cursor: default;
 }
 
 .tabela div.elemento {
+    padding: 0;
+    text-align: center;
+    transition: .29s all;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
     /* border: solid 2px; */
     padding: 0px; 
-    
-   
     text-align: center;
     transition: .29s all;
     cursor: pointer;
 }
 
 .elemento:hover {
-    transform: scale(1.2);
-    /* border: 1px solid ; */
-    /* border-radius:4%; */
-    
+  transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
 }
 
 div.elemento div.numero {
-   font-size: 7pt;
+   font-size: 0.7rem;
+    font-weight: bold;
 }
 div.elemento span.simbolo {
-    font-size: 10pt;
+   font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .nulo{
-  cursor:auto;
+  cursor: auto;
+    background: transparent;
+    box-shadow: none;
 }
 
-
-/*       .metal, .alcalinos, .alcalino-terroso, .outros-metais,.nao-metais, .lantanideos, .gases-nobres, .actinidios */
-
-
-.metal-alcalino {
-    background-color: #f06292; /* Rosa */
-    color: white;
-}
-
-.metal-alcalino-terroso {
-    background-color: #ba68c8; /* Roxo */
-    color: white;
-}
-
-.metal-de-transicao {
-    background-color: #3f51b5; /* Azul Indigo */
-    color: white;
-}
-
-.lantanideo {
-    background-color: #00bcd4; /* Ciano */
-    color: white;
-}
-
-.actinideo {
-    background-color: #009688; /* Verde Teal */
-    color: white;
-}
-
-.metaloide {
-    background-color: #ffc107; /* Amarelo Âmbar */
-}
-
-.nao-metal {
-    background-color: #4caf50; /* Verde */
-    color: white;
-}
-
-.halogenio {
-    background-color: #ff9800; /* Laranja */
-    color: white;
-}
-
-.gas-nobre {
-    background-color: #9e9e9e; /* Cinza */
-    color: white;
-}
-
-.outros-metais {
-    background-color: #795548; /* Marrom */
-    color: white;
-}
-
+/* CATEGORIAS DE ELEMENTOS */
+.metal-alcalino         { background-color: #f06292; color: #fff; }
+.metal-alcalino-terroso { background-color: #ba68c8; color: #fff; }
+.metal-de-transicao     { background-color: #3f51b5; color: #fff; }
+.lantanideo             { background-color: #00bcd4; color: #fff; }
+.actinideo              { background-color: #009688; color: #fff; }
+.metaloide              { background-color: #ffc107; color: #222; }
+.nao-metal              { background-color: #4caf50; color: #fff; }
+.halogenio              { background-color: #ff9800; color: #fff; }
+.gas-nobre              { background-color: #9e9e9e; color: #fff; }
+.outros-metais          { background-color: #795548; color: #fff; }
 #none {
-    border-color: rgb(255, 255, 255);
-    color: rgb(249, 249, 249);
-    background-color: rgb(225, 255, 255, 0.150);
+    border-color: #fff;
+    color: #f9f9f9;
+    background-color: rgba(225,255,255,0.15);
 }
 
 div.modal {
@@ -199,60 +184,63 @@ div.modal {
     grid-column-end: 13;
     grid-row-start: 1;
     grid-row-end: 4;
-    
     /* border-radius: 12px; */
 }
 
+/* MODAL */
 .modal {
-    /* Adicione quaisquer estilos que você já tenha para o seu container modal */
-    display: flex; /* Se você quer que o conteúdo dentro se organize de alguma forma */
-    flex-direction: column; /* Exemplo: Organizar os filhos em coluna */
-    align-items: center; /* Exemplo: Centralizar os filhos horizontalmente */
-    /* Outros estilos do seu modal */
-    background-color: #222; /* Cor de fundo de exemplo para o modal */
-    /* padding-left: 20px;
-    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #222;
+    margin: 0 20px;
     border-radius: 8px;
-    width: 90%;  */
-    /* Largura do seu container modal (ajuste conforme necessário) */
-    /* max-width: 90%; */
-    
-    margin: 0px 20px;
-     /* Para centralizar o modal na tela, se for o caso */
-     
-     
+    padding: 3px;
+    color: #fff;
+}
+.modal .painel-nome {
+    font-size: 1.8em;
+    text-align: left;
+    background-color: #616161;
+   
+    border-radius: 4px;
+}
+.modal .painel-left {
+    background-color: #262626;
+    border-radius: 4px;
+    padding: 5px;
+    width: 40%;
+    text-align: center;
+
+}
+.modal .painel-right {
+    background-color: #262626;
+    border-radius: 4px;
+    padding: 5px;
+    width: 60%;
 }
 
-
-
-
-
+/* VALORES */
 .valor-nome {
     font-size: 3em;
     font-weight: bold;
 }
-
-
-
 .valor-simbolo {
     font-size: 3em;
     font-weight: bold;
     line-height: 1;
 }
-@media(max-width:500px){
-    .valor-simbolo {
-    font-size: 1em;
-    font-weight: bold;
-    line-height: 1;
-    } 
-   
-}
-
 .valor-numero-atomico {
     font-size: 1.5em;
     margin-top: 5px;
 }
 
+@media(max-width:500px){
+    .valor-simbolo {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1;
+    }
+}
 
 #detalhes-elemento {
     background-color: #333;
@@ -261,31 +249,27 @@ div.modal {
     overflow: hidden;
     display: flex; /* Usar flex para organizar as colunas internas */
     flex: 1;
-    
 }
 
-
+/* LISTAS E DADOS */
 .label {
     font-weight: bold;
-    font-size: 5pt;
+    font-size: 0.7rem;
     margin-right: 5px;
 }
-
 .valor-dado {
     text-align: right;
-      font-size: 5pt;
+    font-size: 0.7rem;
 }
-.modal .painel-nome{
-    font-size: 5pt;
-    font-size: 1.8em;
-    text-align: left ;
-    background-color: rgb(255, 0, 0);
-    
-    
+.lista-dados {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
-
-.modal div.painel{
-    background-color: rgb(19, 143, 226);
+.lista-dados li {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 0;
 }
 
 .coluna-nome {
@@ -295,22 +279,69 @@ div.modal {
 
 .colunas-simbolo-dados {
     background-color: rgb(64, 201, 19);
-   
 
 }
-
 .coluna-dados {
-   
     padding-left: 0px;
 }
 
-.lista-dados {
-    list-style: none;
-   
-}
-
-.lista-dados li {
+/* ELEMENTO INDIVIDUAL */
+.element {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 120px;
+    height: 125px;
+    margin: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    
+    align-items: center;
+    gap: 3px;
+    padding: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
 }
+.element:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.7);
+}
+.element input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+}
+.atomic-number {
+    font-weight: bold;
+    color: #555;
+    max-width: 50%;
+    align-self: flex-start;
+}
+.symbol {
+    font-size: 2.5em;
+    font-weight: bold;
+    max-width: 100%;
+    color: #333;
+    text-align: center;
+}
+.name {
+    font-size: 0.9em;
+    color: #666;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+.atomic-mass {
+    font-size: 0.75em;
+    color: #888;
+    margin-bottom: 5px;
+    max-width: 100%;
+    text-align: center;
+}
+/* https://cssgrid-generator.netlify.app/ */

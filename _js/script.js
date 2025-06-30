@@ -95,10 +95,54 @@ function mostrarelemento(elementoMostrar) {
 
 }
 
-function busca(){
+document.getElementById("atomic-number").addEventListener("keyup", function(event) {
+   buscaNumeroAtomico();
+});
 
- numeroAtomico = document.querySelector("#busca_n_atomico").value
+document.getElementById("atomic-number").addEventListener("focusout", function(event) {
+     buscaNumeroAtomico();
+});
 
+function buscaNumeroAtomico() {
+    const inputBusca = document.getElementById("atomic-number");
+    const valorBusca = inputBusca.value.trim();
+    if (valorBusca) {
+        mostrarelemento(valorBusca);
+    } else {
+        console.warn("O campo de busca está vazio.");
+    }
+}
 
-    mostrarelemento(numeroAtomico)
+document.getElementById("symbol").addEventListener("keyup", function(event) {
+   buscaSimbolo()
+})
+document.getElementById("symbol").addEventListener("focusout", function(event) {
+   buscaSimbolo()
+})
+
+function buscaSimbolo() {
+     const inputBusca = document.getElementById("symbol");
+    const valorBusca = inputBusca.value.trim();
+    if (valorBusca) {
+        mostrarelemento(valorBusca);
+    } else {
+        console.warn("O campo de busca está vazio.");
+    }
+}
+
+document.getElementById("elename").addEventListener("keyup", function(event) {
+   buscaNome()
+})
+document.getElementById("elename").addEventListener("focusout", function(event) {
+   buscaNome()
+})
+
+function buscaNome() {
+     const inputBusca = document.getElementById("elename");
+    const valorBusca = inputBusca.value.trim();
+    if (valorBusca) {
+        mostrarelemento(valorBusca);
+    } else {
+        console.warn("O campo de busca está vazio.");
+    }
 }
