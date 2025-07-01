@@ -15,22 +15,11 @@
 
         
     <h1 class="header" style="cursor: default;"> Tabela Periodica </h1>
-
-    <div class="stats">demo</div>
     
       <div class="field">
 
         <div class="left">
-            filtros por propriedades dos elementos
-            <button type="button">-50</button>
-            <button type="button">0</button>
-            <button type="button">50</button>
-            <button type="button">100</button>
-            <button type="button">500</button>
-            <button type="button">1000</button>
-            <br>
-            <input type="range" min="-170" max="5000">
-            <button>X</button>
+            
         </div>
         <div class="center-left">
             <div class="element">
@@ -50,6 +39,9 @@
             <input type="text" placeholder="propriedades">
             
         </div>
+        </div>
+        <div class="center">
+            Fala zeca
         </div>
         <div class="center-right">
             <br>
@@ -82,14 +74,7 @@
 <br>
 
      </div> 
-     <div class="info">
-
-        <div class="top"> sou o nome</div>
-        <div class="icon"> ola gau</div>
-        <div class="desc"> Lorem ipsum dolor sit ames maiores quos voluptatum?</div>
-        <div class="down"> olha aqui</div>
-        
-     </div>
+     
     
     <div class="tabelona">
     <div class="tabela">
@@ -101,53 +86,28 @@
     
         <div class="modal">
 
-             <div class="painel-nome">
-                <span id="elemento-nome"   style="color: aliceblue;" >-</span>
-            </div>
+             
 
             <div id="detalhes-elemento">
 
+                filtros por propriedades dos elementos
+            <button type="button">-50</button>
+            <button type="button">0</button>
+            <button type="button">50</button>
+            <button type="button">100</button>
+            <button type="button">500</button>
+            <button type="button">1000</button>
+            <br>
+            <input type="range" min="-170" max="5000">
+            <button>X</button>
+
                 <div class="painel-left"> 
                     <br><br> 
-                    <span id="elemento-simbolo" class="valor-simbolo">-</span>
+                    <span id="elemento-simbolo" class="valor-simbolo">ss-</span>
                     <br>
-                    <span id="elemento-numero-atomico" class="valor-numero-atomico">-</span>
+                    <span id="elemento-numero-atomico" class="valor-numero-atomico">-ss</span>
                 </div>
 
-                <div class="painel-right"> 
-                    <div class="coluna-dados">
-                        <ul class="lista-dados">
-                            <li>
-                                <span class="label">Massa Atômica:</span>
-                                <span id="elemento-massa-atomica" class="valor-dado">-</span>
-                            </li>
-                            <li>
-                                <span class="label">Grupo:</span>
-                                <span id="elemento-grupo" class="valor-dado">-</span>
-                            </li>
-                            <li>
-                                <span class="label">Período:</span>
-                                <span id="elemento-periodo" class="valor-dado">-</span>
-                            </li>
-                            <li>
-                                <span class="label">Bloco:</span>
-                                <span id="elemento-bloco" class="valor-dado">-</span>
-                            </li>
-                            <li>
-                                <span class="label">Estado Físico:</span>
-                                <span id="elemento-estado-fisico" class="valor-dado">-</span>
-                            </li>
-                            <li>
-                                <span class="label">Configuração Eletrônica:</span>
-                                <span id="elemento-configuracao-eletronica" class="valor-dado">-</span>
-                            </li>
-                            <li>
-                                <span class="label">Grupo Funcional:</span>
-                                <span id="elemento-grupo-funcional" class="valor-dado">-</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
 
             </div> 
 
@@ -316,6 +276,57 @@
 
     </div>
     </div>
+
+    <div class="info">
+
+        <div class="top"> 
+            <span id="elemento-nome"   style="color: aliceblue;" >-</span>
+        </div>
+        <div class="icon">
+            <div class="element">
+            <input type="number" id="atomic-number"  class="atomic-number" value="1" min="1" max="118">
+            <input type="text" id="symbol" class="symbol" placeholder="H" value="H">
+            <input type="text" id="elename" class="elename" value="Hidrogênio">
+            <input type="text" class="atomic-mass" value="1.008">
+            </div>
+        </div>
+        <div class="desc">
+            <div class="coluna-dados">
+                        <ul class="lista-dados">
+                            <li>
+                                <span class="label">Massa Atômica:</span>
+                                <span id="elemento-massa-atomica" class="valor-dado">-</span>
+                            </li>
+                            <li>
+                                <span class="label">Grupo:</span>
+                                <span id="elemento-grupo" class="valor-dado">-</span>
+                            </li>
+                            <li>
+                                <span class="label">Período:</span>
+                                <span id="elemento-periodo" class="valor-dado">-</span>
+                            </li>
+                            <li>
+                                <span class="label">Bloco:</span>
+                                <span id="elemento-bloco" class="valor-dado">-</span>
+                            </li>
+                            <li>
+                                <span class="label">Estado Físico:</span>
+                                <span id="elemento-estado-fisico" class="valor-dado">-</span>
+                            </li>
+                            <li>
+                                <span class="label">Configuração Eletrônica:</span>
+                                <span id="elemento-configuracao-eletronica" class="valor-dado">-</span>
+                            </li>
+                            <li>
+                                <span class="label">Grupo Funcional:</span>
+                                <span id="elemento-grupo-funcional" class="valor-dado">-</span>
+                            </li>
+                        </ul>
+                    </div>
+        </div>
+        <div class="down"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates doloribus necessitatibus amet praesentium ex quas, delectus porro totam corrupti asperiores minima corporis at velit. Nesciunt vero velit autem facere eum?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis minima libero, facilis culpa cum necessitatibus ullam quo, vero nihil, amet recusandae nostrum nesciunt fugiat nemo architecto. Officiis velit reprehenderit consequatur.</div>
+        
+     </div>
 
     <div class="left">ads</div>
     <div class="right">ads</div>

@@ -14,11 +14,11 @@ body {
 .container {
     display: grid;
     grid-template-areas:
-        "header header header header header"
-        "stats field field field sa"
+        "emenu header header header dmenu"
+        "emenu field field info dmenu"
         "emenu contents contents info dmenu"
-        "footer footer footer footer footer";
-    grid-template-columns: 1fr 5fr 5fr 3fr 1fr;
+        "emenu footer footer footer dmenu";
+    grid-template-columns: 1fr 5fr 5fr 4fr 1fr;
     gap: 5px;
     background-color: #2196F3;
     padding: 5px;
@@ -57,17 +57,27 @@ body {
 .info {
     display: grid;
     grid-template-areas:
-        "icon top"
+        "top top"
         "icon desc"
         "down down";
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     gap: 5px;
     background-color: #2ff321;
     border-radius: 8px;
-    padding: 10px;
+    padding: 3px;
 }
 .icon { grid-area: icon; }
-.top  { grid-area: top; }
+.top  { grid-area: top; 
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    font-family: 'Lalezar', cursive;
+    background-color: #616161;
+    border-radius: 4px;
+    padding: 5px;
+    margin: auto auto;
+}
 .desc { grid-area: desc; }
 .down { grid-area: down; }
 
@@ -75,8 +85,8 @@ body {
 div.field {
     grid-area: field;
     display: grid;
-    grid-template-areas: "leftf center-left center-right rightf";
-    grid-template-columns: 1fr 3fr 1fr 1fr;
+    grid-template-areas: "leftf center-left center center-right rightf";
+    grid-template-columns: 1fr 3fr 6fr 3fr 1fr;
     gap: 5px;
     background-color: #2ff321;
     border-radius: 8px;
@@ -84,8 +94,12 @@ div.field {
 }
 div.field .left         { grid-area: leftf; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 div.field .center-left  { grid-area: center-left; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+div.field .center  { grid-area: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 div.field .center-right { grid-area: center-right; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 div.field .right        { grid-area: rightf; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+
+
 
 /* STATS, SA, EMENU, DMENU, CONTENTS */
 .stats, .sa, .emenu, .dmenu, .contents {
