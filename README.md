@@ -30,7 +30,13 @@ tabela-periodica/
 ├── _js/
 |    └── script.js     # Arquivo JavaScript para a lógica da aplicação
 ├── _css/
-|    └── style.css     # Arquivo CSS para a estilização  
+|    └── ├── style.css           (arquivo principal, só importa os outros)
+|        ├── reset.css           (reset ou normalização, se usar)
+|        ├── layout.css          (grids, containers, estrutura geral)
+|        ├── components.css      (elementos reutilizáveis: .element, .modal, .botoes-busca, etc)
+|        ├── colors.css          (paleta de cores, classes de categorias)
+|        ├── forms.css           (inputs, selects, ranges, botões)
+|        └── responsive.css      (media queries)style.css     # Arquivo CSS para a estilização  
 ├── data.json          # Arquivo contendo os dados dos elementos
 ├── index.html         # Arquivo HTML principal
 └── README.md          # Este arquivo

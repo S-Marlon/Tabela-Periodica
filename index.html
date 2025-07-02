@@ -50,9 +50,9 @@
         </div>
         <div class="rightf">
 <div class="element">
-            <input type="number" id="atomic-number"  class="atomic-number" value="1" min="1" max="118">
-            <input type="text"  id="symbol" class="symbol" placeholder="H" value="H">
-            <input type="text"  id="elename" class="elename" value="Hidrogênio">
+            <input type="number" id="atomic-number" class="atomic-number" value="1" min="1" max="118">
+            <input type="text"  id="symbol" class="symbol" placeholder="H" value="H" maxlength="2">
+            <input type="text"  id="elename" class="elename" value="Hidrogênio" maxlength="11">
             <input type="text" class="atomic-mass" value="1.008">
 </div>
               
@@ -82,20 +82,35 @@
         </div>
         
             <div class="espec-right">
-                  filtros por propriedades dos elementos
-            <!-- <button type="button">-50</button>
-            <button type="button">0</button>
-            <button type="button">50</button>
-            <button type="button">100</button>
-            <button type="button">500</button>
-            <button type="button">1000</button>
-            <br> -->
-            <input type="range" min="-170" max="5000">
-            <button>X</button>
-            </div>
 
-        
-        
+            <div class="titulo">Temperatura:</div>
+            <div> 
+            <button type="button" onclick="setTemperatura(this.textContent)">-50</button>
+                <button type="button" onclick="setTemperatura(this.textContent)">0</button>
+                <button type="button" onclick="setTemperatura(this.textContent)">50</button>
+                <button type="button" onclick="setTemperatura(this.textContent)">100</button>
+                <button type="button" onclick="setTemperatura(this.textContent)">500</button>
+                <button type="button" onclick="setTemperatura(this.textContent)">1000</button>  
+                 <div>
+                        <input type="range"  onchange="setTemperatura(this.value)"  min="-170" max="1500" id="escala-calor" value="0">
+                    
+                </div>   
+            </div>
+            
+            <div>
+                <div>
+                Temperatura:
+                    <input type="number" onchange="setTemperatura(this.value)" id="temperatura-visor" value="0" min="-170" max="5000">
+                    <button>X</button>
+                </div>
+                <div>
+                    <button>Celsius</button>
+                    <button>Kelvin</button>
+                    <button>Fahrenheit</button>
+                </div>
+            </div>
+                
+            </div>
 
 <br>
 

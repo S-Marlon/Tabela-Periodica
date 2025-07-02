@@ -146,3 +146,32 @@ function buscaNome() {
         console.warn("O campo de busca está vazio.");
     }
 }
+
+
+
+
+function setTemperatura(graus) {
+    console.log(graus);
+    let temperatura = graus;
+    document.querySelector('#escala-calor').value = temperatura;
+    document.querySelector("#temperatura-visor").value = temperatura ;
+
+   
+
+     
+
+
+// graus = Number(graus);
+
+// if (isNaN(graus)) {
+//     console.error("Valor inválido para temperatura:", graus);
+//     return;
+// }
+
+//      console.log(graus);
+//     // Define a temperatura no elemento de escala de calor
+
+//     document.querySelectorAll('#escala-calor').values = graus;
+//     temperatura.value = graus + ' °C';
+    
+}

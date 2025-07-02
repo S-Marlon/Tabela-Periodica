@@ -1,0 +1,94 @@
+/* Customização geral para todos os inputs de texto e número */
+input[type="text"],
+input[type="number"] {
+    padding: 2px 3px;
+    font-size: 1rem;
+    color: #222;
+    background-color: #f5faff;
+    border: 1.5px solid #2196F3;
+    border-radius: 5px;
+    outline: none;
+    transition: 
+        border-color 0.2s,
+        box-shadow 0.2s;
+    box-shadow: 0 1px 4px rgba(33,150,243,0.08);
+    margin-bottom: 4px;
+}
+
+/* Animação de foco para inputs */
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #1976d2;
+    box-shadow: 0 0 0 2px #1976d2aa;
+}
+
+/* Customização para input range */
+input[type="range"] {
+    width: 100%;
+    accent-color: #2196F3;
+    height: 4px;
+    background: #e3f2fd;
+    border-radius: 2px;
+    outline: none;
+    transition: box-shadow 0.2s;
+    margin: 8px 0;
+}
+
+/* Animação de click/foco para range */
+input[type="range"]:focus {
+    box-shadow: 0 0 0 2px #1976d2aa;
+}
+
+/* Customização geral para todos os selects */
+select {
+    padding: 8px 12px;
+    font-size: 1rem;
+    color: #222;
+    background-color: #f5faff;
+    border: 1.5px solid #2196F3;
+    border-radius: 5px;
+    outline: none;
+    transition: 
+        border-color 0.2s,
+        box-shadow 0.2s;
+    box-shadow: 0 1px 4px rgba(33,150,243,0.08);
+    margin-bottom: 4px;
+    appearance: none; /* Remove a seta padrão (pode customizar com ::after se quiser) */
+}
+
+/* Animação de foco para select */
+select:focus {
+    border-color: #1976d2;
+    box-shadow: 0 0 0 2px #1976d2aa;
+}
+
+/* Customização geral para todos os botões */
+button {
+    padding: 3px 6px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #0f436d;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 
+        background 0.2s,
+        box-shadow 0.2s,
+        transform 0.08s;
+    box-shadow: 0 2px 8px rgba(33,150,243,0.15);
+    outline: none;
+    position: relative;
+}
+
+/* Animação de click: sombra interna e leve afundamento */
+button:active {
+    background-color: #ffffff;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.25), 0 1px 2px rgba(33,150,243,0.10);
+    transform: scale(0.97);
+}
+
+/* Efeito de foco para acessibilidade */
+button:focus {
+    outline: 2px solid #1976d2;
+    outline-offset: 2px;
+}

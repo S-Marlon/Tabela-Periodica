@@ -1,0 +1,15 @@
+.metal-alcalino         { background-color: #f06292; color: #fff; }
+.metal-alcalino-terroso { background-color: #ba68c8; color: #fff; }
+.metal-de-transicao     { background-color: #3f51b5; color: #fff; }
+.lantanideo             { background-color: #00bcd4; color: #fff; }
+.actinideo              { background-color: #009688; color: #fff; }
+.metaloide              { background-color: #ffc107; color: #222; }
+.nao-metal              { background-color: #4caf50; color: #fff; }
+.halogenio              { background-color: #ff9800; color: #fff; }
+.gas-nobre              { background-color: #9e9e9e; color: #fff; }
+.outros-metais          { background-color: #795548; color: #fff; }
+#none {
+    border-color: #fff;
+    color: #f9f9f9;
+    background-color: rgba(225,255,255,0.15);
+}
