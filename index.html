@@ -14,7 +14,7 @@
 <div class="container"> 
 
         
-    <h1 class="header" style="cursor: default;"> Tabela Periodica </h1>
+    <h1 class="header"> Tabela Periodica </h1>
     
       <div class="field">
 
@@ -22,7 +22,43 @@
             
         </div>
         <div class="center-left">
-          tipo elemento:
+         
+        
+        </div>
+        <div class="center">
+            <div class="campos-busca">
+                
+                <input type="text" placeholder="grupo">
+                <input type="text" placeholder="periodo">
+                <input type="text" placeholder="bloco">
+                <input type="text" placeholder="estado fisico">
+                <input type="text" placeholder="configuracao eletronica">  
+                <input type="text" placeholder="grupo funcional">
+                <input type="text" placeholder="propriedades">
+                <input type="text" id="busca_n_atomico">
+            </div>
+            
+                    <div class="botoes-busca">
+                        <button>Limpar</button>
+                        <button onclick="busca()">Buscar</button>
+                    </div>
+           
+        </div>
+        <div class="center-right">
+                
+            
+        </div>
+        <div class="rightf">
+<div class="element">
+            <input type="number" id="atomic-number"  class="atomic-number" value="1" min="1" max="118">
+            <input type="text"  id="symbol" class="symbol" placeholder="H" value="H">
+            <input type="text"  id="elename" class="elename" value="Hidrogênio">
+            <input type="text" class="atomic-mass" value="1.008">
+</div>
+              
+        </div>
+        <div class="espec-left">
+            tipo elemento:
         <select name="" id="">
             <option value="">Todos</option>
             <option value="">Nao Metal</option>
@@ -38,51 +74,28 @@
         </select>
         <button>X</button>
 <br>
-        <button>A - Z</button>
+        <!-- <button>A - Z</button>
         <button>Z - A</button>
         <button>Maior - menor</button>
-        <button>menor - maior</button>
+        <button>menor - maior</button> -->
 
-        
         </div>
-        <div class="center">
-              filtros por propriedades dos elementos
-            <button type="button">-50</button>
+        
+            <div class="espec-right">
+                  filtros por propriedades dos elementos
+            <!-- <button type="button">-50</button>
             <button type="button">0</button>
             <button type="button">50</button>
             <button type="button">100</button>
             <button type="button">500</button>
             <button type="button">1000</button>
-            <br>
+            <br> -->
             <input type="range" min="-170" max="5000">
             <button>X</button>
-        </div>
-        <div class="center-right">
-            <br>
-        <button onclick="busca()">Buscar elemento</button>
-        <input type="text" id="busca_n_atomico">
+            </div>
 
-        <div>
-            
-            <input type="text" placeholder="grupo">
-            <input type="text" placeholder="periodo">
-            <input type="text" placeholder="bloco">
-            <input type="text" placeholder="estado fisico">
-            <input type="text" placeholder="configuracao eletronica">  
-            <input type="text" placeholder="grupo funcional">
-            <input type="text" placeholder="propriedades">
-            
-        </div>
-        </div>
-        <div class="right">
-<div class="element">
-            <input type="number" id="atomic-number"  class="atomic-number" value="1" min="1" max="118">
-            <input type="text" id="symbol" class="symbol" placeholder="H" value="H">
-            <input type="text" id="elename" class="elename" value="Hidrogênio">
-            <input type="text" class="atomic-mass" value="1.008">
-</div>
-              
-        </div>
+        
+        
 
 <br>
 
@@ -286,19 +299,12 @@
         <div class="top"> 
             <span id="elemento-nome"   style="color: aliceblue;" >-</span>
         </div>
-        <div class="icon">
-            <div class="elementbaixo">
-            <input type="number" id="atomic-number"  class="atomic-number" value="1" min="1" max="118">
-            <input type="text" id="symbol" class="symbol" placeholder="H" value="H">
-            <input type="text" id="elename" class="elename" value="Hidrogênio">
-            <input type="text" class="atomic-mass" value="1.008">
-            </div>
-        </div>
+        
         <div class="desc">
-            <div class="coluna-dados">
-                        <ul class="lista-dados">
+            <div class="coluna-dados" >
+                        <ul class="lista-dados" >
                             <li>
-                                <span class="label">Massa Atômica:</span>
+                                <span class="label" >Massa Atômica:</span>
                                 <span id="elemento-massa-atomica" class="valor-dado">-</span>
                             </li>
                             <li>
@@ -319,7 +325,7 @@
                             </li>
                             <li>
                                 <span class="label">Configuração Eletrônica:</span>
-                                <span id="elemento-configuracao-eletronica" class="valor-dado">-</span>
+                                <span id="elemento-configuracao-eletronica" class="valor-dado-eletronica">-</span>
                             </li>
                             <li>
                                 <span class="label">Grupo Funcional:</span>

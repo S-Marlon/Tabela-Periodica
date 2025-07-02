@@ -19,12 +19,13 @@ body {
         "emenu contents contents info dmenu"
         "emenu calcs calcs calcs dmenu"
         "emenu footer footer footer dmenu";
-    grid-template-columns: 1fr 5fr 5fr 4fr 1fr;
+    grid-template-columns: 1fr 5fr 4fr 4fr 1fr;
     gap: 5px;
     background-color: #2196F3;
     padding: 5px;
     min-height: 100vh;
 }
+
 
 /* Áreas do grid */
 .header    { grid-area: header; }
@@ -40,11 +41,11 @@ body {
 
 /* HEADER */
 .header {
+    cursor: default;
     text-align: center;
     font-size: 3rem;
     color: #fff;
-    font-family: 'Lalezar', cursive;
-    padding: 10px 0;
+    padding: px 0;
 }
 
 /* CALCS */
@@ -67,13 +68,13 @@ body {
 .info {
     display: grid;
     grid-template-areas:
-        "top top"
-        "icon desc"
-        "down down";
-    grid-template-columns: 1fr 2fr;
+        "top "
+        "desc "
+        "down ";
+    grid-template-columns: auto ;
      grid-template-rows: auto auto 1fr; /* NOVO: linha do meio cresce */
     gap: 5px;
-    background-color: #2ff321;
+    background-color: #000;
     border-radius: 8px;
     padding: 3px;
     align-items:start ;
@@ -103,11 +104,11 @@ body {
     grid-area: desc;
     font-size: 0.9rem;
     color: #fff;
-    padding: 5px;
+    padding: 10px 15px ;
     background-color: #616161;
     border-radius: 4px;
     overflow-y: auto;
-    max-height: 150px;
+    
     align-self: stretch;   /* NOVO: estica na linha */
     height: 100%;          /* NOVO: ocupa toda a coluna */
 }
@@ -126,8 +127,9 @@ body {
 div.field {
     grid-area: field;
     display: grid;
-    grid-template-areas: "leftf center-left center center-right rightf";
-    grid-template-columns: auto 3fr 6fr 3fr auto;
+    grid-template-areas: "leftf center-left center center-right rightf"
+    "espec-left espec-left espec-right espec-right espec-right";
+    grid-template-columns: 5fr 1fr 6fr 1fr 5fr;
     gap: 5px;
     background-color: #2ff321;
     border-radius: 8px;
@@ -137,9 +139,13 @@ div.field .left         { grid-area: leftf; display: flex; flex-direction: colum
 div.field .center-left  { grid-area: center-left; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 div.field .center  { grid-area: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 div.field .center-right { grid-area: center-right; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-div.field .right        { grid-area: rightf; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+div.field .rightf        { grid-area: rightf; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+div.field .espec-left        { grid-area: espec-left; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+div.field .espec-right        { grid-area: espec-right; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 
-
+div.espec-left, div.espec-right { 
+    background-color: #fff;
+}
 
 
 /* STATS, SA, EMENU, DMENU, CONTENTS */
@@ -175,14 +181,16 @@ div.right{
 }
 
 .tabela {
+    
    display: grid;
     grid-template-columns: repeat(18, 1fr);
-    gap: 2px;
+    gap: 3px;
     margin: 0 auto;
     cursor: default;
 }
 
 .tabela div.elemento {
+    
     padding: 0;
     text-align: center;
     transition: .29s all;
@@ -197,18 +205,25 @@ div.right{
 }
 
 .elemento:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+  
 }
 
 div.elemento div.numero {
-   font-size: 0.7rem;
-    font-weight: bold;
+    
+   font-size: 0.8rem;
+    font-family: 'Lalezar', cursive;
+
+    
 }
 div.elemento span.simbolo {
-   font-size: 1.2rem;
-    font-weight: bold;
+    font-family: 'Lalezar', cursive;
+   font-size: 1.4rem;
+    
 }
+
+
 
 .nulo{
   cursor: auto;
@@ -307,25 +322,8 @@ div.modal {
 }
 
 /* LISTAS E DADOS */
-.label {
-    font-weight: bold;
-    font-size: 0.7rem;
-    margin-right: 5px;
-}
-.valor-dado {
-    text-align: right;
-    font-size: 0.7rem;
-}
-.lista-dados {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.lista-dados li {
-    display: flex;
-    justify-content: space-between;
-    padding: 2px 0;
-}
+
+
 
 .coluna-nome {
     background-color: rgb(19, 143, 226);
@@ -336,8 +334,27 @@ div.modal {
     background-color: rgb(64, 201, 19);
 
 }
-.coluna-dados {
-    padding-left: 0px;
+div.coluna-dados {
+    
+}
+.lista-dados {
+   
+
+    padding: 0;
+    margin: 0;
+    
+
+}
+.lista-dados li {
+    border-bottom: #00bcd4 solid 1px;
+    margin-bottom:10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25em;
+}
+
+.lista-dados li .valor-dado-eletronica{
+    font-size: 1rem;
 }
 
 /* ELEMENTO INDIVIDUAL */
@@ -345,9 +362,9 @@ div.modal {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
-    width: 120px;
-    height: 125px;
-    margin: 10px;
+    width: 70%;              /* Ocupa toda a largura da célula do grid */
+    aspect-ratio: 1 / 1;      /* Mantém proporção quadrada */
+    margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -357,6 +374,7 @@ div.modal {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.2s, box-shadow 0.2s;
     position: relative;
+    box-sizing: border-box;
 }
 .element:hover {
     transform: translateY(-5px);
@@ -376,7 +394,7 @@ div.modal {
     max-width: 50%;
     align-self: flex-start;
 }
-.symbol {
+input.symbol {
     font-size: 2.5em;
     font-weight: bold;
     max-width: 100%;
@@ -401,32 +419,30 @@ div.modal {
 }
 /* https://cssgrid-generator.netlify.app/ */
 
-.elementbaixo{
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: 100%;
-    height: 100%;
-    margin: 2px;
+.botoes-busca {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 3px;
-    padding: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-    position: relative;
+    flex-direction: row;
+    gap: 8px;
+    justify-content:space-between;
+
 }
-.elementbaixo:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.7);
-}
-.elementbaixo input {
-    width: 100%;
+
+.botoes-busca button{
+    padding: 8px 16px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #2196F3;
     border: none;
-    background: transparent;
-    text-align: center;
-    font-size: 1.2em;
-    color: #333;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.campos-busca {
+    display: flex;
+    flex-wrap: wrap;   /* Quebra linha se faltar espaço */
+    gap: 8px;          /* Espaço entre os inputs */
+}
+.campos-busca input {
+    flex: 1 1 120px;   /* Cresce, mas tem largura mínima */
+    min-width: 100px;
 }
