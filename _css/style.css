@@ -72,33 +72,41 @@ div.modal {
     grid-row-start: 1;
     grid-row-end: 4;
 }
-.modal {
-    display: flex;
-    flex-direction: column;
+div.modal {
+    display: grid;
+    grid-template-areas:
+        "painel-nome painel-nome"
+        "painel-left painel-right";
+    grid-template-columns: 70% 30%;
+    gap: 10px;
     background-color: #222;
     margin: 0 20px;
     border-radius: 8px;
     padding: 3px;
     color: #fff;
 }
+
 .modal .painel-nome {
+    grid-area: painel-nome;
     font-size: 1.8em;
     text-align: left;
     background-color: #616161;
     border-radius: 4px;
 }
+
 .modal .painel-left {
+    grid-area: painel-left;
     background-color: #262626;
     border-radius: 4px;
     padding: 5px;
-    width: 40%;
     text-align: center;
 }
+
 .modal .painel-right {
+    grid-area: painel-right;
     background-color: #262626;
     border-radius: 4px;
     padding: 5px;
-    width: 60%;
 }
 
 /* VALORES */

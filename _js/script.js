@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         mostrarelemento(elementoBuscado);
                 });
                      elementoDiv.classList.add(elemento.grupo_funcional.toLowerCase().replace(/ /g, '-'));
-                     
 
                 } else {
                     console.warn(`Não há dados correspondentes no JSON para a div 'elemento' no índice ${index}.`);
@@ -175,3 +174,45 @@ function setTemperatura(graus) {
 //     temperatura.value = graus + ' °C';
     
 }
+
+fetch('phases.json')
+  .then(response => response.json())
+  .then(data => {
+    const elementsData = data.elements_phases;
+
+    // Exemplo: Como encontrar o hidrogênio pelo número atômico
+    const hydrogen = elementsData.find(el => el.atomic_number === 92);
+    if (hydrogen) {
+      console.log(`Ponto de Fusão do Hidrogênio: ${hydrogen.melting_point_C}°C`);
+      console.log(`Ponto de Ebulição do Hidrogênio: ${hydrogen.boiling_point_C}°C`);
+      console.log(`Início do Plasma do Hidrogênio: ${hydrogen.plasma_start_C}°C`);
+    }
+
+    // Você pode agora integrar isso à sua lógica de pesquisa na tabela periódica
+  })
+  .catch(error => console.error('Erro ao carregar dados:', error));
+
+
+
+function setOpacity(ref) {
+     ref = ref.trim().toLowerCase(); // Normaliza a referência
+    
+     if (ref === "" || ref === undefined || ref === null || ref === "todos" || ref === "x") {
+        return document.querySelectorAll('.elemento').forEach(el => {
+            el.style.opacity = "1"; // Reseta a opacidade para 100% se não houver referência
+        });
+     }
+
+    document.querySelectorAll('.elemento').forEach(el => {
+        console.log(el.classList);
+        console.log(ref);
+        
+         if (!el.classList.contains(ref)) {
+             el.style.opacity = "0.5";
+         } else {
+             el.style.opacity = "1";
+         }
+     });
+}
+
+

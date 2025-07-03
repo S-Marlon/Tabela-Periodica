@@ -58,22 +58,28 @@
               
         </div>
         <div class="espec-left">
-            tipo elemento:
-        <select name="" id="">
-            <option value="">Todos</option>
-            <option value="">Nao Metal</option>
-            <option value="">Gas Nobre</option>
-            <option value="">Metal Alcalino</option>
-            <option value="">Metal Alcalino-Terroso</option>
-            <option value="">Metaloide</option>
-            <option value="">Halogenio</option>
-            <option value="">Outros Metais</option>
-            <option value="">Metal de Transicao</option>
-            <option value="">Lantanideo</option>
-            <option value="">Actinideo</option>
-        </select>
-        <button>X</button>
-<br>
+
+            
+            <div class="titulo">Legenda:</div>
+           
+            
+            <div>
+            <select style="width: 50%;" onchange="setOpacity(this.value)">
+                <option value="Todos">Todos</option>
+                <option value="Nao-Metal">Não Metal</option>
+                <option value="Gas-Nobre">Gás Nobre</option>
+                <option value="Metal-Alcalino">Metal Alcalino</option>
+                <option value="Metal-Alcalino-Terroso">Metal Alcalino-Terroso</option>
+                <option value="Metaloide">Metaloide</option>
+                <option value="Halogenio">Halogenio</option>
+                <option value="Outros-Metais">Outros Metais</option>
+                <option value="Metal-de-Transicao">Metal de Transicao</option>
+                <option value="Lantanideo">Lantanideo</option>
+                <option value="Actinideo">Actinideo</option>
+            </select>
+            <button onclick="setOpacity(this.value)">X</button>
+            </div>
+
         <!-- <button>A - Z</button>
         <button>Z - A</button>
         <button>Maior - menor</button>
@@ -129,7 +135,9 @@
 
              
 
-            <div id="detalhes-elemento">
+            <div class="painel-titulo">
+                LLLLLLLLLLLLLLLLLLLLLLLLL
+            </div>
 
               
 
@@ -139,9 +147,23 @@
                     <br>
                     <span id="elemento-numero-atomico" class="valor-numero-atomico">-ss</span>
                 </div>
+                <div class="painel-right">
+                    
+                    <ul class="legenda">
+                        <li><input type="color" id="body" name="body" value="4caf50" />Não Metal</li>
+                        <li><input type="color" id="body" name="body" value="#9e9e9e" />Gás Nobre</li>
+                        <li><input type="color" id="body" name="body" value="#f06292" />Alcalino</li>
+                        <li><input type="color" id="body" name="body" value="#ba68c8" />Alcalino-Terroso</li>
+                        <li><input type="color" id="body" name="body" value="#ffc107" />Metaloide</li>
+                        <li><input type="color" id="body" name="body" value="#ff9800" />Halogenio</li>
+                        <li><input type="color" id="body" name="body" value="#795548" />Outros Metais</li>
+                        <li><input type="color" id="body" name="body" value="#3f51b5" />Metal de Transicao</li>
+                        <li><input type="color" id="body" name="body" value="#00bcd4" />Lantanideo</li>
+                        <li><input type="color" id="body" name="body" value="#009688" />Actinideo</li>
+                    </ul>
+                </div>
 
-
-            </div> 
+            
 
         </div>
 
@@ -358,6 +380,7 @@
 
     <footer class="calcs">
         <h3>LOCAL DESTINADO AOS ALUNOS DOIDOS QUE FAZEM CALCULOS DOIDOS</h3>
+        <button onclick="setOpacity()"> aaaaaaaaaaaaaaaaaaaaaaaaa</button>
     </footer>   
 
     <footer class="footer">
