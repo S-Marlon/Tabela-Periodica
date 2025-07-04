@@ -26,8 +26,10 @@
         
         </div>
         <div class="center">
+            <div class="titulo">
+                Busca especifica:
+            </div>
             <div class="campos-busca">
-                
                 <input type="text" placeholder="grupo">
                 <input type="text" placeholder="periodo">
                 <input type="text" placeholder="bloco">
@@ -60,11 +62,12 @@
         <div class="espec-left">
 
             
-            <div class="titulo">Legenda:</div>
+            <div class="titulo">
+                Grupo Funcional:
+            </div>
            
-            
             <div>
-            <select style="width: 50%;" onchange="setOpacity(this.value)">
+            <select  onchange="setOpacity(this.value)">
                 <option value="Todos">Todos</option>
                 <option value="Nao-Metal">Não Metal</option>
                 <option value="Gas-Nobre">Gás Nobre</option>
@@ -77,8 +80,8 @@
                 <option value="Lantanideo">Lantanideo</option>
                 <option value="Actinideo">Actinideo</option>
             </select>
-            <button onclick="setOpacity(this.value)">X</button>
-            </div>
+            <button onclick="setOpacity(this.value)" class="close">X</button>
+        </div>
 
         <!-- <button>A - Z</button>
         <button>Z - A</button>
@@ -89,7 +92,9 @@
         
             <div class="espec-right">
 
-            <div class="titulo">Temperatura:</div>
+            <div class="titulo">
+                Temperatura Ambiente:
+            </div>
             <div> 
             <button type="button" onclick="setTemperatura(this.textContent)">-50</button>
                 <button type="button" onclick="setTemperatura(this.textContent)">0</button>
@@ -103,11 +108,13 @@
                 </div>   
             </div>
             
-            <div>
+            <div class="temperatura-visor">
                 <div>
                 Temperatura:
+                </div>
+                <div>
                     <input type="number" onchange="setTemperatura(this.value)" id="temperatura-visor" value="0" min="-170" max="5000">
-                    <button>X</button>
+                    <button class="close">X</button>
                 </div>
                 <div>
                     <button>Celsius</button>
@@ -135,7 +142,7 @@
 
              
 
-            <div class="painel-titulo">
+            <div class="painel-nome">
                 LLLLLLLLLLLLLLLLLLLLLLLLL
             </div>
 
@@ -143,24 +150,27 @@
 
                 <div class="painel-left"> 
                     <br><br> 
-                    <span id="elemento-simbolo" class="valor-simbolo">ss-</span>
+                    <span id="elemento-simbolo" class="valor-simbolo">-</span>
                     <br>
-                    <span id="elemento-numero-atomico" class="valor-numero-atomico">-ss</span>
+                    <span id="elemento-numero-atomico" class="valor-numero-atomico">-</span>
+                    <br>
+                    <span id="elemento-numero-atomico" class="valor-numero-atomico">Solido</span>
                 </div>
-                <div class="painel-right">
+                <div class="painel-right" style="display:flex;">
                     
                     <ul class="legenda">
-                        <li><input type="color" id="body" name="body" value="4caf50" />Não Metal</li>
-                        <li><input type="color" id="body" name="body" value="#9e9e9e" />Gás Nobre</li>
-                        <li><input type="color" id="body" name="body" value="#f06292" />Alcalino</li>
-                        <li><input type="color" id="body" name="body" value="#ba68c8" />Alcalino-Terroso</li>
-                        <li><input type="color" id="body" name="body" value="#ffc107" />Metaloide</li>
-                        <li><input type="color" id="body" name="body" value="#ff9800" />Halogenio</li>
-                        <li><input type="color" id="body" name="body" value="#795548" />Outros Metais</li>
-                        <li><input type="color" id="body" name="body" value="#3f51b5" />Metal de Transicao</li>
-                        <li><input type="color" id="body" name="body" value="#00bcd4" />Lantanideo</li>
-                        <li><input type="color" id="body" name="body" value="#009688" />Actinideo</li>
+                        <li onclick="setOpacity(this.textContent)"><input type="color" id="body" name="body" value="4caf50" disabled/>Não Metal</li>
+                        <li onclick="setOpacity(this.textContent)"><input type="color" id="body" name="body" value="#9e9e9e" disabled/>Gás Nobre</li>
+                        <li onclick="setOpacity(this.textContent)"><input type="color" id="body" name="body" value="#f06292" disabled/>Alcalino</li>
+                        <li onclick="setOpacity(this.textContent)"><input type="color" id="body" name="body" value="#ba68c8" disabled/>Alcalino-Terroso</li>
+                        <li onclick="setOpacity(this.textContent)"><input type="color" id="body" name="body" value="#ffc107" disabled/>Metaloide</li>
+                        <li onclick="setOpacity(this.textContent)"><input type="color" id="body" name="body" value="#ff9800" disabled/>Halogenio</li>
+                        <li onclick="setOpacity(this.textContent)"><input type="color" id="body" name="body" value="#795548" disabled/>Outros Metais</li>
+                        <li onclick="setOpacity(this.textContent)"><input type="color" id="body" name="body" value="#3f51b5" disabled/>Metal de Transicao</li>
+                        <li onclick="setOpacity(this.textContent)"><input type="color" id="body" name="body" value="#00bcd4" disabled/>Lantanideo</li>
+                        <li onclick="setOpacity(this.textContent)"><input type="color" id="body" name="body" value="#009688" disabled/>Actinideo</li>
                     </ul>
+                    <button  onclick="setOpacity(this.value)" class="close" style="display:flex; position: relative; top:0; right: 0;">X</button>
                 </div>
 
             
@@ -380,7 +390,6 @@
 
     <footer class="calcs">
         <h3>LOCAL DESTINADO AOS ALUNOS DOIDOS QUE FAZEM CALCULOS DOIDOS</h3>
-        <button onclick="setOpacity()"> aaaaaaaaaaaaaaaaaaaaaaaaa</button>
     </footer>   
 
     <footer class="footer">

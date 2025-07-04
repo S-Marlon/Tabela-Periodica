@@ -195,7 +195,8 @@ fetch('phases.json')
 
 
 function setOpacity(ref) {
-     ref = ref.trim().toLowerCase(); // Normaliza a referência
+    
+     ref = ref.trim().toLowerCase().replace(/ /g, '-').replace( 'ã' , 'a' ).replace( 'á' , 'a' ) // Normaliza a referência
     
      if (ref === "" || ref === undefined || ref === null || ref === "todos" || ref === "x") {
         return document.querySelectorAll('.elemento').forEach(el => {

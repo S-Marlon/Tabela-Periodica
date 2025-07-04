@@ -1,18 +1,20 @@
 /* Customização geral para todos os inputs de texto e número */
 input[type="text"],
 input[type="number"] {
-    padding: 2px 3px;
+    all: unset;
+    padding: 1px 2px;
     font-size: 1rem;
     color: #222;
-    background-color: #f5faff;
-    border: 1.5px solid #2196F3;
-    border-radius: 5px;
+    background-color: white;
+    border-bottom: 2px solid #585858;
+    text-transform: capitalize;
     outline: none;
     transition: 
         border-color 0.2s,
         box-shadow 0.2s;
     box-shadow: 0 1px 4px rgba(33,150,243,0.08);
-    margin-bottom: 4px;
+    margin-bottom: 2px;
+    
 }
 
 /* Animação de foco para inputs */
@@ -39,6 +41,10 @@ input[type="range"]:focus {
     box-shadow: 0 0 0 2px #1976d2aa;
 }
 
+input[type="number"]{
+    -moz-appearance: textfield; /* Remove setas de incremento/decremento no Firefox */
+}
+
 /* Customização geral para todos os selects */
 select {
     padding: 8px 12px;
@@ -63,38 +69,62 @@ select:focus {
 }
 
 /* Customização geral para todos os botões */
-button {
-    padding: 3px 6px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #0f436d;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 
-        background 0.2s,
-        box-shadow 0.2s,
-        transform 0.08s;
-    box-shadow: 0 2px 8px rgba(33,150,243,0.15);
-    outline: none;
-    position: relative;
-}
-
-/* Animação de click: sombra interna e leve afundamento */
-button:active {
-    background-color: #ffffff;
-    box-shadow: inset 0 2px 8px rgba(0,0,0,0.25), 0 1px 2px rgba(33,150,243,0.10);
-    transform: scale(0.97);
-}
-
-/* Efeito de foco para acessibilidade */
-button:focus {
-    outline: 2px solid #1976d2;
-    outline-offset: 2px;
-}
-
 ul {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+button {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  padding: 9px 10px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+button:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+button:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+button:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+button.close {
+background-image: radial-gradient(100% 100% at 100% 0, #ff0000 0, #590f0f 100%);    text-transform: uppercase;
+    padding: 6px 6px;
+    border-radius: 4px;
+    color: #ffffff;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
 }

@@ -9,7 +9,7 @@
         "emenu footer footer footer dmenu";
     grid-template-columns: 1fr 5fr 4fr 4fr 1fr;
     gap: 5px;
-    background-color: #2196F3;
+    background-color: #6f6f6f;
     padding: 5px;
     min-height: 100vh;
 }
@@ -32,7 +32,7 @@
     text-align: center;
     font-size: 3rem;
     color: #fff;
-    padding: 0 0;
+    margin: -10px -10px;
 }
 
 /* CALCS */
@@ -137,10 +137,21 @@
 .field .center       { grid-area: center; }
 .field .center-right { grid-area: center-right; }
 .field .rightf       { grid-area: rightf; }
-.field .espec-left   { grid-area: espec-left; }
-.field .espec-right  { grid-area: espec-right; }
+.field .espec-left   { grid-area: espec-left;}
+.field .espec-right  { grid-area: espec-right;}
 
-/* ESPEC-RIGHT GRID */z
+/* ESPEC-RIGHT GRID */
+
+.espec-left {
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espalha os filhos verticalmente */
+    align-items: stretch;           /* Faz os filhos ocuparem toda a largura */
+    width: 80%;
+    align-self: center;
+    height: 100%;
+ }
 .espec-right {
     display: grid;
     grid-template-areas:
@@ -161,6 +172,24 @@
 }
 .espec-right > div:nth-child(2) { grid-area: col1; }
 .espec-right > div:nth-child(3) { grid-area: col2; }
+
+.temperatura-visor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #00bcd4;
+    border-radius: 8px;
+    padding: 10px;
+    color: #fff;
+}
+
+/* slider track */
+input[type="range"]::-moz-range-track {
+background: linear-gradient(90deg,rgba(255, 255, 255, 1) 0%, rgba(115, 241, 255, 1) 6%, rgba(61, 165, 196, 1) 13%, rgba(239, 255, 69, 1) 25%, rgba(255, 98, 0, 1) 51%, rgba(255, 0, 0, 1) 77%, rgba(148, 19, 19, 1) 100%);
+  border-radius: 0.5rem;
+  height: 0.5rem;
+}
 
 /* OUTRAS ÁREAS */
 .stats, .sa, .emenu, .dmenu, .contents {
