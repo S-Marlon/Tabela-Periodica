@@ -36,6 +36,14 @@ input[type="range"] {
     margin: 8px 0;
 }
 
+input[type="range"]::-moz-range-thumb {
+  background-color: #1a89a1;
+  border: 3px solid; /*Removes extra border that FF applies*/
+  border-radius: 0.5rem;
+  height: 2rem;
+  width: 2rem;
+}
+
 /* Animação de click/foco para range */
 input[type="range"]:focus {
     box-shadow: 0 0 0 2px #1976d2aa;
@@ -92,7 +100,6 @@ button {
   line-height: 1;
   list-style: none;
   overflow: hidden;
-  
   position: relative;
   text-align: left;
   text-decoration: none;

@@ -148,7 +148,7 @@
     flex-direction: column;
     justify-content: space-between; /* Espalha os filhos verticalmente */
     align-items: stretch;           /* Faz os filhos ocuparem toda a largura */
-    width: 80%;
+    width: 100%;
     align-self: center;
     height: 100%;
  }
@@ -157,13 +157,22 @@
     grid-template-areas:
         "titulo titulo"
         "col1   col2";
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     padding: 10px;
-    gap: 10px;
+    gap: 5px;
     background-color: #00bcd4;
     align-items: center;
     justify-items: center;
 }
+.rangervisor {
+     display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Espalha os filhos verticalmente */
+    align-items: stretch;           /* Faz os filhos ocuparem toda a largura */
+    height: 100%;                   /* Garante que ocupe toda a altura do pai */
+    gap: 0;    
+}
+
 .espec-right .titulo {
     grid-area: titulo;
     font-weight: bold;
@@ -175,20 +184,24 @@
 
 .temperatura-visor {
     display: flex;
+    gap: 10px;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: #00bcd4;
+    justify-content: space-between;
+    background-color: #000000;
     border-radius: 8px;
     padding: 10px;
     color: #fff;
+}
+button.ola{
+    background-color: #deff06;
 }
 
 /* slider track */
 input[type="range"]::-moz-range-track {
 background: linear-gradient(90deg,rgba(255, 255, 255, 1) 0%, rgba(115, 241, 255, 1) 6%, rgba(61, 165, 196, 1) 13%, rgba(239, 255, 69, 1) 25%, rgba(255, 98, 0, 1) 51%, rgba(255, 0, 0, 1) 77%, rgba(148, 19, 19, 1) 100%);
   border-radius: 0.5rem;
-  height: 0.5rem;
+  height: 0rgb(126, 78, 78)m;
 }
 
 /* OUTRAS ÁREAS */

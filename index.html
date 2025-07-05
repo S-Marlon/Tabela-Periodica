@@ -95,32 +95,34 @@
             <div class="titulo">
                 Temperatura Ambiente:
             </div>
-            <div> 
-            <button type="button" onclick="setTemperatura(this.textContent)">-50</button>
+            <div class="rangervisor"> 
+                <div>
+                <button type="button" onclick="setTemperatura(this.textContent)">-50</button>
                 <button type="button" onclick="setTemperatura(this.textContent)">0</button>
                 <button type="button" onclick="setTemperatura(this.textContent)">50</button>
                 <button type="button" onclick="setTemperatura(this.textContent)">100</button>
                 <button type="button" onclick="setTemperatura(this.textContent)">500</button>
                 <button type="button" onclick="setTemperatura(this.textContent)">1000</button>  
-                 <div>
-                        <input type="range"  onchange="setTemperatura(this.value)"  min="-170" max="1500" id="escala-calor" value="0">
-                    
+                </div>
+                <div>
+                    <input type="range"  onchange="setTemperatura(this.value)"  min="-170" max="1500" id="escala-calor" value="0">  
                 </div>   
-            </div>
-            
-            <div class="temperatura-visor">
-                <div>
-                Temperatura:
-                </div>
-                <div>
-                    <input type="number" onchange="setTemperatura(this.value)" id="temperatura-visor" value="0" min="-170" max="5000">
-                    <button class="close">X</button>
-                </div>
                 <div>
                     <button>Celsius</button>
                     <button>Kelvin</button>
                     <button>Fahrenheit</button>
                 </div>
+            </div>
+            
+            <div class="temperatura-visor">
+                <div style="font-size: 1em;">
+                Temperatura:
+                </div>
+                <div>
+                    <input type="number" onchange="setTemperatura(this.value)" id="temperatura-visor" value="0" min="-170" max="5000" style="font-size: 2em; text-align: center;">
+                </div>
+                <button style="width: 100%;">X</button>
+                
             </div>
                 
             </div>
