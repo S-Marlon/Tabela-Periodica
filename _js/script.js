@@ -1,3 +1,5 @@
+let filtroSelecionado = null;
+
 document.addEventListener('DOMContentLoaded', function() {
     fetch('data.json')
         .then(response => response.json())
@@ -193,18 +195,35 @@ fetch('phases.json')
   .catch(error => console.error('Erro ao carregar dados:', error));
 
 
+function enviarPaiText(input, event) {
+    event.stopPropagation();
+    var textoPai = input.parentElement.textContent.trim();
+    setOpacity(textoPai);
+}
 
-function setOpacity(ref) {
-    
-     ref = ref.trim().toLowerCase().replace(/ /g, '-').replace( 'ã' , 'a' ).replace( 'á' , 'a' ) // Normaliza a referência
-    
-     if (ref === "" || ref === undefined || ref === null || ref === "todos" || ref === "x") {
+function unsetOpacity() {
+    if (!filtroSelecionado) {
+        document.querySelectorAll('.elemento').forEach(el => {
+            el.style.opacity = "1";
+        });
+        document.querySelectorAll('.close').forEach(el => el.style.display = "none");
+    }
+}
+
+//  funcionou o hover, mas apos o click ele não reseta mais
+function setOpacity(ref,type) {
+    ref = ref.trim().toLowerCase().replace(/ /g, '-').replace( 'ã' , 'a' ).replace( 'á' , 'a' ) // Normaliza a referência
+    if (ref === "" || ref === undefined || ref === null || ref === "todos" || ref === "x") {
+         document.querySelectorAll('.close').forEach(el => el.style.display = "none");
         return document.querySelectorAll('.elemento').forEach(el => {
             el.style.opacity = "1"; // Reseta a opacidade para 100% se não houver referência
         });
      }
 
-    document.querySelectorAll('.elemento').forEach(el => {
+    
+    if (type === "hover") {
+
+        document.querySelectorAll('.elemento').forEach(el => {
         console.log(el.classList);
         console.log(ref);
         
@@ -213,7 +232,69 @@ function setOpacity(ref) {
          } else {
              el.style.opacity = "1";
          }
-     });
+
+        })        
+        
+        
+    }else if (type === "click") {
+        filtroSelecionado = ref; // Marca o filtro como ativo
+
+        document.querySelectorAll('.close').forEach(el => el.style.display = "inline-block");
+
+        document.querySelectorAll('.elemento').forEach(el => {
+        console.log(el.classList);
+        console.log(ref);
+        
+         if (!el.classList.contains(ref)) {
+             el.style.opacity = "0.5";
+         } else {
+             el.style.opacity = "1";
+         }
+        });
+    } else {
+        filtroSelecionado = null; // Nenhum filtro ativo
+    } 
 }
 
+
+
+// // Variável global para controlar o filtro ativo
+
+
+// function setOpacity(ref) {
+//     filtroSelecionado = ref; // Marca o filtro como ativo
+//     document.querySelectorAll('.close').forEach(el => el.style.display = "inline-block");
+
+//     ref = ref.trim().toLowerCase().replace(/ /g, '-').replace('ã', 'a').replace('á', 'a');
+//     if (!ref || ref === "todos" || ref === "x") {
+//         document.querySelectorAll('.close').forEach(el => el.style.display = "none");
+//         document.querySelectorAll('.elemento').forEach(el => el.style.opacity = "1");
+//         filtroSelecionado = null; // Nenhum filtro ativo
+//         return;
+//     }
+
+//     document.querySelectorAll('.elemento').forEach(el => {
+//         if (!el.classList.contains(ref)) {
+//             el.style.opacity = "0.5";
+//         } else {
+//             el.style.opacity = "1";
+//         }
+//     });
+// }
+
+// function unsetOpacity(ref) {
+//     // Só reseta se NÃO houver filtro ativo
+//     if (!filtroSelecionado) {
+//         document.querySelectorAll('.elemento').forEach(el => {
+//             el.style.opacity = "1";
+//         });
+//         document.querySelectorAll('.close').forEach(el => el.style.display = "none");
+//     }
+// }
+
+// // Se quiser limpar o filtro ao clicar no botão X:
+// function limparFiltro() {
+//     filtroSelecionado = null;
+//     unsetOpacity();
+// }
 

@@ -112,7 +112,7 @@
     display: grid;
     grid-template-areas:
         "leftf center-left center center-right rightf"
-        "espec-left espec-left espec-right espec-right espec-right";
+        "espec-left espec-right espec-right espec-right espec-right";
     grid-template-columns: 5fr 1fr 6fr 1fr 5fr;
     gap: 5px;
     background-color: #2ff321;
@@ -155,23 +155,16 @@
 .espec-right {
     display: grid;
     grid-template-areas:
-        "titulo titulo"
-        "col1   col2";
-    grid-template-columns: 2fr 1fr;
+        "titulo titulo titulo"
+        "col1 col2 col3";
+    grid-template-columns: 3fr 1fr 2fr;
     padding: 10px;
     gap: 5px;
     background-color: #00bcd4;
     align-items: center;
     justify-items: center;
 }
-.rangervisor {
-     display: flex;
-    flex-direction: column;
-    justify-content: space-around; /* Espalha os filhos verticalmente */
-    align-items: stretch;           /* Faz os filhos ocuparem toda a largura */
-    height: 100%;                   /* Garante que ocupe toda a altura do pai */
-    gap: 0;    
-}
+
 
 .espec-right .titulo {
     grid-area: titulo;
@@ -181,16 +174,35 @@
 }
 .espec-right > div:nth-child(2) { grid-area: col1; }
 .espec-right > div:nth-child(3) { grid-area: col2; }
+.espec-right > div:nth-child(4) { grid-area: col3; }
+
+.temperatura-ranger {
+     display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Espalha os filhos verticalmente */
+    align-items: stretch;           /* Faz os filhos ocuparem toda a largura */
+    height: 100%;                   /* Garante que ocupe toda a altura do pai */
+    gap: 0;    
+}
+
+.temperatura-medida {
+     display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Espalha os filhos verticalmente */
+    align-items: stretch;           /* Faz os filhos ocuparem toda a largura */
+    height: 100%;                   /* Garante que ocupe toda a altura do pai */
+    gap: 0;    
+}
 
 .temperatura-visor {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     background-color: #000000;
     border-radius: 8px;
-    padding: 10px;
+    padding: 5px;
     color: #fff;
 }
 button.ola{

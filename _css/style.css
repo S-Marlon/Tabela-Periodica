@@ -63,6 +63,7 @@ div.elemento span.simbolo {
     cursor: auto;
     background: transparent;
     box-shadow: none;
+    /* background-color: rgba(0, 0, 255, 0.13); */
 }
 
 /* MODAL */
@@ -75,15 +76,14 @@ div.modal {
 div.modal {
     display: grid;
     grid-template-areas:
-        "painel-nome painel-nome"
-        "painel-left painel-right";
-    grid-template-columns: 60% 40%;
-    gap: 0px;
-    background-color: #222;
-    margin: 0 20px;
+        "painel-nome painel-nome painel-nome"
+        "painel-left painel-center painel-right";
+    grid-template-columns: 30% auto 40px;
+    gap: 5px;
+    background-color: #262626;
+    margin: 0 10px;
     border-radius: 8px;
     padding: 3px;
-   
     color: #fff;
 }
 
@@ -97,18 +97,35 @@ div.modal {
 
 .modal .painel-left {
     grid-area: painel-left;
-    background-color: #262626;
     border-radius: 4px;
     padding: 5px;
     text-align: center;
+    background-color: red;
+}
+
+
+.modal .painel-center {
+   grid-area: painel-center;
+    display: flex;
+    border-radius: 4px;
+    padding: 1px;
+    flex-direction: row;
+    justify-content: stretch;   /* Faz os filhos ocuparem todo o espaço */
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    min-width: 0;
+}
+.modal .painel-center > * {
+    flex: 1 1 0;
+    min-width: 0;
 }
 
 .modal .painel-right {
     grid-area: painel-right;
-    background-color: #222;
-    
     border-radius: 4px;
-    padding: 1px;
+    padding: 10px 3px;
+    text-align: center;
 }
 
 /* VALORES */

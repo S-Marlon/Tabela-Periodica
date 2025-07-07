@@ -95,7 +95,7 @@
             <div class="titulo">
                 Temperatura Ambiente:
             </div>
-            <div class="rangervisor"> 
+            <div class="temperatura-ranger"> 
                 <div>
                 <button type="button" onclick="setTemperatura(this.textContent)">-50</button>
                 <button type="button" onclick="setTemperatura(this.textContent)">0</button>
@@ -107,13 +107,13 @@
                 <div>
                     <input type="range"  onchange="setTemperatura(this.value)"  min="-170" max="1500" id="escala-calor" value="0">  
                 </div>   
-                <div>
+                
+            </div>
+            <div class="temperatura-medida">
                     <button>Celsius</button>
                     <button>Kelvin</button>
                     <button>Fahrenheit</button>
                 </div>
-            </div>
-            
             <div class="temperatura-visor">
                 <div style="font-size: 1em;">
                 Temperatura:
@@ -121,7 +121,7 @@
                 <div>
                     <input type="number" onchange="setTemperatura(this.value)" id="temperatura-visor" value="0" min="-170" max="5000" style="font-size: 2em; text-align: center;">
                 </div>
-                <button style="width: 100%;">X</button>
+                <button style="width: 100%;">Resetar</button>
                 
             </div>
                 
@@ -143,36 +143,45 @@
         <div class="modal">
 
              
+            
 
             <div class="painel-nome">
                 LLLLLLLLLLLLLLLLLLLLLLLLL
             </div>
 
-              
 
                 <div class="painel-left"> 
-                    <br><br> 
+                    <br>
                     <span id="elemento-simbolo" class="valor-simbolo">-</span>
                     <br>
                     <span id="elemento-numero-atomico" class="valor-numero-atomico">-</span>
                     <br>
                     <span id="elemento-numero-atomico" class="valor-numero-atomico">Solido</span>
                 </div>
-                <div class="painel-right" style="display:flex;">
-                    
+                <div class="painel-center">
+                    <div>
                     <ul class="legenda">
-                        <li onclick="setOpacity(this.textContent)"><input type="color" id="body" name="body" value="4caf50" disabled/>Não Metal</li>
-                        <li onclick="setOpacity(this.textContent)"><input type="color" id="body" name="body" value="#9e9e9e" disabled/>Gás Nobre</li>
-                        <li onclick="setOpacity(this.textContent)"><input type="color" id="body" name="body" value="#f06292" disabled/>Alcalino</li>
-                        <li onclick="setOpacity(this.textContent)"><input type="color" id="body" name="body" value="#ba68c8" disabled/>Alcalino-Terroso</li>
-                        <li onclick="setOpacity(this.textContent)"><input type="color" id="body" name="body" value="#ffc107" disabled/>Metaloide</li>
-                        <li onclick="setOpacity(this.textContent)"><input type="color" id="body" name="body" value="#ff9800" disabled/>Halogenio</li>
-                        <li onclick="setOpacity(this.textContent)"><input type="color" id="body" name="body" value="#795548" disabled/>Outros Metais</li>
-                        <li onclick="setOpacity(this.textContent)"><input type="color" id="body" name="body" value="#3f51b5" disabled/>Metal de Transicao</li>
-                        <li onclick="setOpacity(this.textContent)"><input type="color" id="body" name="body" value="#00bcd4" disabled/>Lantanideo</li>
-                        <li onclick="setOpacity(this.textContent)"><input type="color" id="body" name="body" value="#009688" disabled/>Actinideo</li>
+                        <li onmouseleave="unsetOpacity()" onmouseenter="setOpacity(this.textContent,'hover')" onclick="setOpacity(this.textContent,'click')" id="set"><input type="color" id="body" name="body" value="4caf50"   onclick="enviarPaiText(this,event)"/>Não Metal</li>
+                        <li onmouseleave="unsetOpacity()" onmouseenter="setOpacity(this.textContent,'hover')" onclick="setOpacity(this.textContent,'click')" ><input type="color" id="body" name="body" value="#9e9e9e" disabled onclick="enviarPaiText(this)"/>Gás Nobre</li>
+                        <li onmouseleave="unsetOpacity()" onmouseenter="setOpacity(this.textContent,'hover')" onclick="setOpacity(this.textContent,'click')" ><input type="color" id="body" name="body" value="#f06292" disabled onclick="enviarPaiText(this)"/>Alcalino</li>
+                        <li onmouseleave="unsetOpacity()" onmouseenter="setOpacity(this.textContent,'hover')" onclick="setOpacity(this.textContent,'click')" ><input type="color" id="body" name="body" value="#ba68c8" disabled onclick="enviarPaiText(this)"/>Alcalino-Terroso</li>
+                        <li onmouseleave="unsetOpacity()" onmouseenter="setOpacity(this.textContent,'hover')" onclick="setOpacity(this.textContent,'click')" ><input type="color" id="body" name="body" value="#ffc107" disabled onclick="enviarPaiText(this)"/>Metaloide</li>
                     </ul>
-                    <button  onclick="setOpacity(this.value)" class="close" style="display:flex; position: relative; top:0; right: 0;">X</button>
+                    </div>
+                    <div>
+                    <ul class="legenda">
+                        <li onmouseleave="unsetOpacity()" onmouseenter="setOpacity(this.textContent,'hover')" onclick="setOpacity(this.textContent,'click')"><input type="color" id="body" name="body" value="#ff9800" disabled onclick="enviarPaiText(this)"/>Halogenio</li>
+                        <li onmouseleave="unsetOpacity()" onmouseenter="setOpacity(this.textContent,'hover')" onclick="setOpacity(this.textContent,'click')"><input type="color" id="body" name="body" value="#795548" disabled onclick="enviarPaiText(this)"/>Outros Metais</li>
+                        <li onmouseleave="unsetOpacity()" onmouseenter="setOpacity(this.textContent,'hover')" onclick="setOpacity(this.textContent,'click')"><input type="color" id="body" name="body" value="#3f51b5" disabled onclick="enviarPaiText(this)"/>Metal de Transicao</li>
+                        <li onmouseleave="unsetOpacity()" onmouseenter="setOpacity(this.textContent,'hover')" onclick="setOpacity(this.textContent,'click')"><input type="color" id="body" name="body" value="#00bcd4" disabled onclick="enviarPaiText(this)"/>Lantanideo</li>
+                        <li onmouseleave="unsetOpacity()" onmouseenter="setOpacity(this.textContent,'hover')" onclick="setOpacity(this.textContent,'click')"><input type="color" id="body" name="body" value="#009688" disabled onclick="enviarPaiText(this)"/>Actinideo</li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="painel-right">
+                    <div>
+                      <button onclick="setOpacity(this.value)" class="close">X</button>
+                  </div>
                 </div>
 
             
@@ -255,7 +264,7 @@
         <!------- linha 06------------->
         <div class="elemento" ></div>
         <div class="elemento" ></div>
-                <div class="nulo" style="background-color: rgba(0, 0, 255, 0.13);"></div>
+                <div class="nulo"></div>
 
         <div class="elemento" ></div>
         <div class="elemento" ></div>
@@ -276,7 +285,7 @@
         <!------- linha 07------------->
         <div class="elemento" ></div>
         <div class="elemento" ></div>
-        <div class="nulo" style="background-color: rgba(0, 0, 255, 0.13);"></div>
+        <div class="nulo"></div>
         <div class="elemento" ></div>
         <div class="elemento" ></div>
         <div class="elemento" ></div>
@@ -295,10 +304,9 @@
         <!------- linha 07------------->
     </div>
 
-    <br><br>
+    <br>
 
-    <div class="tabela" style="background-color: rgba(0, 0, 255, 0.13);">
-
+    <div class="tabela">
         <!------- linha 08------------->
         <div class="nulo"></div>
         <div class="nulo"></div>
@@ -346,7 +354,7 @@
     <div class="info">
 
         <div class="top"> 
-            <span id="elemento-nome"   style="color: aliceblue;" >-</span>
+            <span id="elemento-nome">-</span>
         </div>
         
         <div class="desc">

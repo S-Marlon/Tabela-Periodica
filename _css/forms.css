@@ -127,11 +127,18 @@ button:active {
 }
 
 button.close {
-background-image: radial-gradient(100% 100% at 100% 0, #ff0000 0, #590f0f 100%);    text-transform: uppercase;
-    padding: 6px 6px;
+    background-image: radial-gradient(100% 100% at 100% 0, #ff0000 0, #590f0f 100%);  
+    text-transform: uppercase;
+    padding: 3px 6px;
+    /* display:none; */
+    align-items: center;
     border-radius: 4px;
     color: #ffffff;
     border: none;
+    transition: .5s;
     font-size: 1.2rem;
     cursor: pointer;
+    width: 25px;
+    display: none;
+    aspect-ratio: 1 / 1;      /* Mantém proporção quadrada */
 }
